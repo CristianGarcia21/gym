@@ -1,0 +1,1050 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rutina de Luisa</title>
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Rutina">
+<meta name="theme-color" content="#2b2924">
+<style>
+  :root{
+    --bg:#f6f4f0;
+    --card:#ffffff;
+    --text:#2b2924;
+    --muted:#726b60;
+    --border:#e7e1d7;
+    --chip:#f0ece3;
+    --brazo:#c9743a;
+    --pierna1:#2f8f5b;
+    --pierna2:#1f6e46;
+    --abs:#2f6fa8;
+    --torso:#7a4fa0;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#17150f;
+      --card:#211e17;
+      --text:#f2ede2;
+      --muted:#b4ab9c;
+      --border:#3a3527;
+      --chip:#2b2720;
+      --shadow: 0 1px 3px rgba(0,0,0,0.4);
+    }
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    padding-bottom:60px;
+  }
+  header{
+    position:sticky;
+    top:0;
+    background:var(--bg);
+    z-index:10;
+    padding:16px 16px 0 16px;
+    border-bottom:1px solid var(--border);
+  }
+  h1{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:1.3rem;
+    margin:0 0 12px 0;
+  }
+  h1 svg{
+    width:24px;
+    height:24px;
+    flex:0 0 auto;
+    color:var(--text);
+  }
+  .tabs{
+    display:flex;
+    gap:6px;
+    overflow-x:auto;
+    padding-bottom:12px;
+    -webkit-overflow-scrolling:touch;
+  }
+  .tab{
+    flex:0 0 auto;
+    padding:8px 16px;
+    border-radius:999px;
+    border:1px solid var(--border);
+    background:var(--card);
+    color:var(--text);
+    font-size:0.9rem;
+    cursor:pointer;
+    white-space:nowrap;
+  }
+  .tab.active{
+    background:var(--text);
+    color:var(--bg);
+    border-color:var(--text);
+  }
+  main{
+    padding:16px;
+    max-width:640px;
+    margin:0 auto;
+  }
+  .week-actions{
+    display:flex;
+    justify-content:flex-end;
+    margin-bottom:12px;
+  }
+  .btn-ghost{
+    background:none;
+    border:1px solid var(--border);
+    color:var(--muted);
+    padding:6px 12px;
+    border-radius:8px;
+    font-size:0.8rem;
+    cursor:pointer;
+  }
+  .day-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-left:5px solid var(--accent, #999);
+    border-radius:12px;
+    margin-bottom:12px;
+    box-shadow:var(--shadow);
+    overflow:hidden;
+  }
+  .day-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 16px;
+    cursor:pointer;
+  }
+  .day-head-left{
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+  }
+  .day-name{
+    font-weight:700;
+    font-size:1rem;
+  }
+  .day-focus{
+    font-size:0.82rem;
+    color:var(--muted);
+  }
+  .day-progress{
+    font-size:0.8rem;
+    color:var(--muted);
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .chevron{
+    width:14px;
+    height:14px;
+    flex:0 0 auto;
+    color:var(--muted);
+    transition:transform 0.15s ease;
+  }
+  .day-card.open .chevron{
+    transform:rotate(90deg);
+  }
+  .day-body{
+    display:none;
+    padding:0 16px 14px 16px;
+  }
+  .day-card.open .day-body{
+    display:block;
+  }
+  .warmup{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:0.85rem;
+    color:var(--muted);
+    background:var(--chip);
+    padding:8px 10px;
+    border-radius:8px;
+    margin-bottom:10px;
+  }
+  .warmup svg{
+    width:16px;
+    height:16px;
+    flex:0 0 auto;
+  }
+  .circuit{
+    margin-bottom:12px;
+  }
+  .circuit-title{
+    font-size:0.78rem;
+    text-transform:uppercase;
+    letter-spacing:0.03em;
+    color:var(--muted);
+    margin-bottom:6px;
+  }
+  .exercise{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    padding:8px 0;
+    border-bottom:1px solid var(--border);
+  }
+  .exercise:last-child{
+    border-bottom:none;
+  }
+  .exercise input[type=checkbox]{
+    width:22px;
+    height:22px;
+    flex:0 0 auto;
+    margin-top:2px;
+    accent-color:var(--accent, #333);
+  }
+  .exercise-text{
+    flex:1;
+    min-width:0;
+    cursor:pointer;
+  }
+  .exercise-name-row{
+    display:flex;
+    align-items:baseline;
+    gap:6px;
+  }
+  .exercise-name{
+    font-size:0.92rem;
+    line-height:1.3;
+  }
+  .exercise-name.done{
+    text-decoration:line-through;
+    color:var(--muted);
+  }
+  .info-chevron{
+    width:11px;
+    height:11px;
+    flex:0 0 auto;
+    color:var(--muted);
+    transition:transform 0.15s ease;
+  }
+  .exercise-text.open .info-chevron{
+    transform:rotate(90deg);
+  }
+  .exercise-sets{
+    font-size:0.78rem;
+    color:var(--muted);
+    margin-top:1px;
+  }
+  .exercise-desc{
+    display:none;
+    font-size:0.82rem;
+    color:var(--muted);
+    background:var(--chip);
+    border-radius:8px;
+    padding:10px;
+    margin-top:6px;
+    line-height:1.4;
+  }
+  .exercise-text.open .exercise-desc{
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+  }
+  .exercise-illustration{
+    flex:0 0 auto;
+    width:64px;
+    height:64px;
+    background:#26241f;
+    border-radius:8px;
+    padding:6px;
+  }
+  .exercise-illustration img{
+    width:100%;
+    height:100%;
+    display:block;
+    object-fit:contain;
+  }
+  .exercise-desc-text{
+    flex:1;
+    min-width:0;
+  }
+  .credits{
+    font-size:0.7rem;
+    color:var(--muted);
+    text-align:center;
+    padding:0 16px 8px;
+  }
+  .credits a{
+    color:var(--muted);
+  }
+  .progress-bar-outer{
+    width:52px;
+    height:6px;
+    background:var(--border);
+    border-radius:999px;
+    overflow:hidden;
+  }
+  .progress-bar-inner{
+    height:100%;
+    background:var(--accent,#333);
+  }
+  footer{
+    text-align:center;
+    color:var(--muted);
+    font-size:0.75rem;
+    padding:16px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6.5 6.5 17.5 17.5"></path>
+      <path d="M4 8 8 4l2 2-4 4-2-2Z"></path>
+      <path d="M16 20l4-4-2-2-4 4 2 2Z"></path>
+      <path d="M2.5 15.5l2-2"></path>
+      <path d="M19.5 6.5l2 2"></path>
+    </svg>
+    Rutina de Luisa
+  </h1>
+  <div class="tabs" id="weekTabs"></div>
+</header>
+
+<main>
+  <div class="week-actions">
+    <button class="btn-ghost" id="resetWeekBtn">Reiniciar semana</button>
+  </div>
+  <div id="daysContainer"></div>
+</main>
+
+<footer>Toca un ejercicio para ver cómo se hace. Marca la casilla al terminarlo; el progreso se guarda en este dispositivo.</footer>
+<p class="credits">Ilustraciones de ejercicios: Everkinetic y <a href="https://bryllim.com" target="_blank" rel="noopener noreferrer">Bryl Lim</a> (<a href="https://github.com/bryllim/workout-guide" target="_blank" rel="noopener noreferrer">workout-guide</a>), bajo licencia <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>.</p>
+
+<script>
+(function(){
+  "use strict";
+
+  var TYPE_COLORS = {
+    brazo: "var(--brazo)",
+    pierna1: "var(--pierna1)",
+    pierna2: "var(--pierna2)",
+    abs: "var(--abs)",
+    torso: "var(--torso)"
+  };
+
+  var CHEVRON_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg>';
+  var WARMUP_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"></circle><path d="M12 9v4l3 2"></path><path d="M9 2h6"></path></svg>';
+  var INFO_CHEVRON_SVG = '<svg class="info-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg>';
+
+  // ---- how-to text per exercise, shown inline (no internet needed) ----
+  var DESCRIPTIONS = {
+    "Jalón a la frente con polea, agarre de cuerdas": "De pie frente a la polea alta con agarre de cuerda, tira hacia la frente separando las manos al final y llevando los codos hacia atrás y afuera.",
+    "Parada frente a la máquina y levantar": "De pie frente a la máquina, empuja hacia arriba de forma controlada sin bloquear los codos, y baja despacio.",
+    "Sentada al revés, máquina de abrir y cerrar brazos": "Siéntate mirando hacia el respaldo de la máquina (al revés) y abre los brazos hacia atrás apretando los omóplatos; controla la vuelta.",
+    "Polea arriba, codos pegados, bajar y subir": "De pie frente a la polea alta, con los codos pegados al cuerpo, extiende el brazo hacia abajo y sube controlando sin mover los codos.",
+    "Cajón, sostenerse de espaldas, bajar y subir": "Apoya las manos en el borde del cajón o banco de espaldas, baja el cuerpo doblando los codos y empuja de nuevo hacia arriba.",
+    "Jalón al pecho": "Sentada con agarre ancho en la polea alta, tira la barra hacia el pecho llevando los codos hacia abajo y atrás; sube controlando.",
+    "Remo": "Con la espalda recta, tira del agarre hacia el abdomen apretando los omóplatos al final, y regresa controlando.",
+    "Polea, agarre 2 cuerdas al pecho": "Con las dos cuerdas de la polea, tira hacia el pecho llevando los codos hacia atrás y aprieta la espalda al final del movimiento.",
+    "Jalón de espalda por encima de la cabeza": "Con los brazos extendidos por encima de la cabeza, jala hacia abajo controlando el movimiento con la espalda, sin usar impulso.",
+    "Banco, brazos arriba con mancuerna hacia atrás": "Acostada en el banco, sosteniendo una mancuerna con ambas manos, baja los brazos por detrás de la cabeza y vuelve a subir sin arquear la espalda.",
+    "Peso muerto": "Con la barra cerca de las piernas, baja doblando la cadera hacia atrás manteniendo la espalda recta, y sube empujando con los talones.",
+    "Máquina del culito": "Ajusta la máquina y empuja con el talón extendiendo la cadera, apretando el glúteo al final del recorrido.",
+    "Aductor al revés": "En la máquina, en posición de abrir las piernas, ábrelas contra la resistencia y controla la vuelta.",
+    "Sentadilla con barra": "Con la barra en los hombros, baja doblando cadera y rodillas manteniendo la espalda recta, hasta que los muslos queden paralelos al piso.",
+    "Extensión": "Sentada en la máquina, extiende las rodillas levantando el peso y baja controlando sin dejar caer la carga.",
+    "Aductor de cerrar": "Sentada en la máquina con las piernas abiertas, ciérralas contra la resistencia apretando el interior del muslo.",
+    "Zancada con peso": "Da un paso largo hacia adelante bajando la rodilla trasera casi hasta el piso, y empuja con la pierna delantera para volver.",
+    "Puente": "Acostada boca arriba con las rodillas dobladas, levanta la cadera apretando el glúteo y baja controlando.",
+    "Hack al revés": "En la máquina hack mirando hacia el respaldo, baja doblando las rodillas y empuja con los talones para subir.",
+    "Avanzadas con peso (incluye sentadilla)": "Alterna zancadas caminando hacia adelante con peso, agregando una sentadilla cada cierto número de pasos.",
+    "Acostada boca arriba, mancuerna en la pelvis, elevación con cada pie": "Acostada con la mancuerna sobre la cadera y rodillas dobladas, levanta y baja un talón a la vez sin dejar caer la cadera.",
+    "Acostada boca arriba, mancuerna en la pelvis, levantarse con los dos pies": "Acostada con la mancuerna sobre la cadera, empuja con ambos talones para levantar la cadera y baja controlando.",
+    "La que llega al culito": "En la máquina de glúteo, empuja hacia atrás y arriba con el talón, apretando el glúteo al final del movimiento.",
+    "Patada": "De pie o apoyada en la máquina, lleva la pierna hacia atrás extendida apretando el glúteo, sin arquear la espalda.",
+    "Cajón, subir y bajar": "Sube al cajón apoyando todo el pie y baja controlando por el mismo lado, sin dejarte caer.",
+    "Prensa (subiendo peso por serie)": "Empuja la plataforma con los talones extendiendo las piernas sin bloquear del todo las rodillas, y baja controlando.",
+    "Sentadilla con mancuerna": "Sostén la mancuerna frente al pecho o a los lados y baja en sentadilla manteniendo el torso erguido.",
+    "Patada hacia atrás": "Lleva la pierna extendida hacia atrás apretando el glúteo, manteniendo la espalda estable.",
+    "Burpies": "Baja a sentadilla, extiende los pies hacia atrás, haz una flexión opcional, regresa y ponte de pie.",
+    "Mariposas": "Salta abriendo brazos y piernas a la vez, y vuelve a la posición inicial de forma controlada.",
+    "Coger balón y lanzar hacia arriba": "Sostén el balón medicinal y lánzalo con fuerza hacia arriba, recibiéndolo con las rodillas semiflexionadas.",
+    "Plancha tocando hombro": "En posición de plancha, lleva una mano a tocar el hombro contrario alternando, sin mover la cadera de lado a lado.",
+    "Vuelta al gimnasio (trote)": "Trota a ritmo constante manteniendo una respiración controlada durante todo el recorrido.",
+    "Plancha haciendo skippi": "En plancha, lleva las rodillas hacia el pecho alternando rápido, como un trote horizontal.",
+    "Acostada, caminado": "Acostada boca arriba, mueve las piernas como si caminaras en el aire, manteniendo la zona lumbar pegada al piso.",
+    "Acostada, tijera": "Acostada boca arriba con las piernas estiradas, sube y baja las piernas alternando como una tijera.",
+    "Acostada, elevaciones": "Acostada boca arriba, sube ambas piernas juntas y baja controlando sin tocar el piso del todo.",
+    "Tirar balón": "Lanza el balón medicinal contra el piso o la pared con fuerza usando todo el cuerpo, y recupéralo.",
+    "Trotar hasta el hospital": "Trota a ritmo constante hasta el punto marcado, manteniendo una respiración controlada.",
+    "Abdominales": "Acostada boca arriba con las rodillas dobladas, sube el torso contrayendo el abdomen sin tirar del cuello.",
+    "Elevaciones": "Acostada boca arriba, sube ambas piernas juntas y baja controlando sin tocar el piso del todo.",
+    "Tijeras": "Acostada boca arriba con las piernas estiradas, sube y baja las piernas alternando como una tijera.",
+    "Gusanito boca abajo": "De pie, baja las manos al piso y camina con ellas hacia adelante hasta quedar en plancha, y regresa.",
+    "Plancha": "Mantén el cuerpo recto apoyado en antebrazos y puntas de los pies, sin dejar caer la cadera.",
+    "Bicicleta": "Acostada boca arriba, lleva el codo contrario a la rodilla alternando, como pedaleando una bicicleta."
+  };
+
+  // ---- illustrations, self-hosted from assets/ (CC BY-SA 4.0, see footer credit) ----
+  var EXERCISE_IMAGE = {
+    "Jalón a la frente con polea, agarre de cuerdas": "face-pull",
+    "Parada frente a la máquina y levantar": "machine-shoulder-press",
+    "Sentada al revés, máquina de abrir y cerrar brazos": "reverse-pec-deck",
+    "Polea arriba, codos pegados, bajar y subir": "tricep-pushdown",
+    "Cajón, sostenerse de espaldas, bajar y subir": "bench-dip",
+    "Jalón al pecho": "lat-pulldown",
+    "Remo": "seated-row",
+    "Polea, agarre 2 cuerdas al pecho": "seated-row",
+    "Jalón de espalda por encima de la cabeza": "wide-grip-lat-pulldown",
+    "Peso muerto": "deadlift",
+    "Máquina del culito": "hip-thrust",
+    "Aductor al revés": "hip-abduction-machine",
+    "Sentadilla con barra": "squat",
+    "Extensión": "leg-extension",
+    "Aductor de cerrar": "hip-adduction-machine",
+    "Zancada con peso": "walking-lunge",
+    "Puente": "glute-bridge",
+    "Hack al revés": "hack-squat",
+    "Avanzadas con peso (incluye sentadilla)": "walking-lunge",
+    "Acostada boca arriba, mancuerna en la pelvis, elevación con cada pie": "glute-bridge-march",
+    "Acostada boca arriba, mancuerna en la pelvis, levantarse con los dos pies": "dumbbell-hip-thrust",
+    "La que llega al culito": "machine-glute-kickback",
+    "Patada": "donkey-kick",
+    "Cajón, subir y bajar": "step-up",
+    "Prensa (subiendo peso por serie)": "leg-press",
+    "Sentadilla con mancuerna": "goblet-squat",
+    "Patada hacia atrás": "donkey-kick",
+    "Burpies": "burpee",
+    "Mariposas": "jumping-jack",
+    "Plancha tocando hombro": "plank-shoulder-tap",
+    "Vuelta al gimnasio (trote)": "running",
+    "Plancha haciendo skippi": "mountain-climber",
+    "Acostada, tijera": "flutter-kick",
+    "Acostada, elevaciones": "lying-leg-raise",
+    "Trotar hasta el hospital": "running",
+    "Abdominales": "crunch",
+    "Elevaciones": "lying-leg-raise",
+    "Tijeras": "flutter-kick",
+    "Gusanito boca abajo": "inchworm",
+    "Plancha": "plank",
+    "Bicicleta": "bicycle-crunch"
+  };
+
+  function ex(name, sets){ return { name: name, sets: sets }; }
+  function circuit(label, exercises){ return { label: label, exercises: exercises }; }
+
+  var weeks = [
+    {
+      name: "Semana 1",
+      days: [
+        {
+          key: "s1-lunes", day: "Lunes", focus: "Brazo y Hombro", type: "brazo",
+          circuits: [
+            circuit("Circuito 1 · x3", [
+              ex("Polea arriba, codos pegados, bajar y subir", "x15"),
+              ex("Cajón, sostenerse de espaldas, bajar y subir", "x15")
+            ]),
+            circuit("Circuito 2 · x3", [
+              ex("Jalón a la frente con polea, agarre de cuerdas", "x15"),
+              ex("Sentada al revés, máquina de abrir y cerrar brazos", "x10")
+            ]),
+            circuit("Circuito 3 · x3", [
+              ex("Parada frente a la máquina y levantar", "x10")
+            ])
+          ]
+        },
+        {
+          key: "s1-martes", day: "Martes", focus: "Pierna A", type: "pierna1",
+          circuits: [
+            circuit("Circuito 1 · x3", [
+              ex("Peso muerto", "x10"),
+              ex("Máquina del culito", "x10"),
+              ex("Aductor al revés", "x20")
+            ]),
+            circuit("Circuito 2 · x3", [
+              ex("Sentadilla con barra", "x10"),
+              ex("Extensión", "x10"),
+              ex("Aductor de cerrar", "x20")
+            ]),
+            circuit("Circuito 3 · x3", [
+              ex("Zancada con peso", "x15"),
+              ex("Puente", "x12")
+            ])
+          ]
+        },
+        {
+          key: "s1-miercoles", day: "Miércoles", focus: "Abs y Cardio", type: "abs",
+          warmup: "Trote suave y movilidad articular",
+          circuits: [
+            circuit("Circuito 1 · x3", [
+              ex("Burpies", "x10"),
+              ex("Mariposas", "x40"),
+              ex("Coger balón y lanzar hacia arriba", "")
+            ]),
+            circuit("Circuito 2 · x3", [
+              ex("Plancha tocando hombro", "x10"),
+              ex("Vuelta al gimnasio (trote)", ""),
+              ex("Plancha haciendo skippi", "")
+            ]),
+            circuit("Circuito 3 · x4", [
+              ex("Acostada, caminado", "1 min"),
+              ex("Acostada, tijera", "1 min"),
+              ex("Acostada, elevaciones", "1 min")
+            ])
+          ]
+        },
+        {
+          key: "s1-jueves", day: "Jueves", focus: "Torso", type: "torso",
+          circuits: [
+            circuit("Circuito 1 · x3", [
+              ex("Jalón al pecho", "x10"),
+              ex("Remo", "x10")
+            ]),
+            circuit("Circuito 2 · x3", [
+              ex("Polea, agarre 2 cuerdas al pecho", "x10"),
+              ex("Jalón de espalda por encima de la cabeza", "x15")
+            ]),
+            circuit("Circuito 3 · x3", [
+              ex("Banco, brazos arriba con mancuerna hacia atrás", "x15")
+            ])
+          ]
+        },
+        {
+          key: "s1-viernes", day: "Viernes", focus: "Pierna B", type: "pierna2",
+          circuits: [
+            circuit("Circuito 1 · x3", [
+              ex("La que llega al culito", "2x15"),
+              ex("Patada", "10 por pierna"),
+              ex("Puente", "3x10")
+            ]),
+            circuit("Circuito 2 · x3", [
+              ex("Hack al revés", "2x10"),
+              ex("Zancada con peso", "x15")
+            ]),
+            circuit("Circuito 3 · x3", [
+              ex("Cajón, subir y bajar", "x20"),
+              ex("Prensa (subiendo peso por serie)", "")
+            ])
+          ]
+        }
+      ]
+    },
+    {
+      name: "Semana 2",
+      days: [
+        {
+          key: "s2-lunes", day: "Lunes", focus: "Brazo y Hombro", type: "brazo",
+          circuits: [
+            circuit("Circuito 1 · x3", [
+              ex("Jalón a la frente con polea, agarre de cuerdas", "x10"),
+              ex("Parada frente a la máquina y levantar", "x10")
+            ]),
+            circuit("Circuito 2 · x3", [
+              ex("Sentada al revés, máquina de abrir y cerrar brazos", "x10"),
+              ex("Polea arriba, codos pegados, bajar y subir", "x15")
+            ]),
+            circuit("Circuito 3 · x3", [
+              ex("Cajón, sostenerse de espaldas, bajar y subir", "x15")
+            ])
+          ]
+        },
+        {
+          key: "s2-martes", day: "Martes", focus: "Pierna A", type: "pierna1",
+          circuits: [
+            circuit("Circuito 1 · x3", [
+              ex("Extensión", "x10 / x15 / x20"),
+              ex("Aductor al revés", "x20 / x20 / x30"),
+              ex("Hack al revés", "x15")
+            ]),
+            circuit("Circuito 2 · x3", [
+              ex("Avanzadas con peso (incluye sentadilla)", ""),
+              ex("Peso muerto", "x15")
+            ]),
+            circuit("Circuito 3 · x4", [
+              ex("Acostada boca arriba, mancuerna en la pelvis, elevación con cada pie", ""),
+              ex("Acostada boca arriba, mancuerna en la pelvis, levantarse con los dos pies", "")
+            ])
+          ]
+        },
+        {
+          key: "s2-miercoles", day: "Miércoles", focus: "Abs y Cardio", type: "abs",
+          circuits: [
+            circuit("Circuito 1 · x3", [
+              ex("Cajón, subir y bajar", "x20"),
+              ex("Tirar balón", "x15"),
+              ex("Bicicleta", "x15"),
+              ex("Gusanito boca abajo", ""),
+              ex("Plancha", "")
+            ]),
+            circuit("Circuito 2 · x2", [
+              ex("Trotar hasta el hospital", ""),
+              ex("Burpies", "x10")
+            ]),
+            circuit("Circuito 3 · x5", [
+              ex("Abdominales", "x10"),
+              ex("Elevaciones", "x10"),
+              ex("Tijeras", "x10")
+            ])
+          ]
+        },
+        {
+          key: "s2-jueves", day: "Jueves", focus: "Torso", type: "torso",
+          circuits: [
+            circuit("Circuito 1 · x3", [
+              ex("Jalón de espalda por encima de la cabeza", "x15"),
+              ex("Banco, brazos arriba con mancuerna hacia atrás", "x15")
+            ]),
+            circuit("Circuito 2 · x3", [
+              ex("Jalón al pecho", "x10"),
+              ex("Remo", "x10")
+            ]),
+            circuit("Circuito 3 · x3", [
+              ex("Polea, agarre 2 cuerdas al pecho", "x10")
+            ])
+          ]
+        },
+        {
+          key: "s2-viernes", day: "Viernes", focus: "Pierna B", type: "pierna2",
+          circuits: [
+            circuit("Circuito 1 · x3", [
+              ex("Sentadilla con mancuerna", "x20"),
+              ex("Prensa (subiendo peso por serie)", "")
+            ]),
+            circuit("Circuito 2 · x3", [
+              ex("Zancada con peso", ""),
+              ex("Aductor de cerrar", "x15")
+            ]),
+            circuit("Circuito 3 · x3", [
+              ex("Extensión", "x15"),
+              ex("Patada hacia atrás", "10 por pierna"),
+              ex("Hack al revés", "x15")
+            ])
+          ]
+        }
+      ]
+    },
+    {
+      name: "Semana 3",
+      days: [
+        {
+          key: "s3-lunes", day: "Lunes", focus: "Brazo y Hombro", type: "brazo",
+          circuits: [
+            circuit("Circuito 1 · x3", [
+              ex("Polea arriba, codos pegados, bajar y subir", "x20"),
+              ex("Jalón a la frente con polea, agarre de cuerdas", "x15")
+            ]),
+            circuit("Circuito 2 · x3", [
+              ex("Cajón, sostenerse de espaldas, bajar y subir", "x20"),
+              ex("Sentada al revés, máquina de abrir y cerrar brazos", "x15")
+            ]),
+            circuit("Circuito 3 · x3", [
+              ex("Parada frente a la máquina y levantar", "x15")
+            ])
+          ]
+        },
+        {
+          key: "s3-martes", day: "Martes", focus: "Pierna A", type: "pierna1",
+          circuits: [
+            circuit("Circuito 1 · x3", [
+              ex("Sentadilla con barra", "x12"),
+              ex("Prensa (subiendo peso por serie)", ""),
+              ex("Extensión", "x15")
+            ]),
+            circuit("Circuito 2 · x3", [
+              ex("Peso muerto", "x12"),
+              ex("Máquina del culito", "x12"),
+              ex("Aductor de cerrar", "x20")
+            ]),
+            circuit("Circuito 3 · x3", [
+              ex("Hack al revés", "x15"),
+              ex("Aductor al revés", "x20")
+            ])
+          ]
+        },
+        {
+          key: "s3-miercoles", day: "Miércoles", focus: "Abs y Cardio", type: "abs",
+          warmup: "Trote suave y movilidad articular",
+          circuits: [
+            circuit("Circuito 1 · x3", [
+              ex("Burpies", "x12"),
+              ex("Mariposas", "x40"),
+              ex("Coger balón y lanzar hacia arriba", "")
+            ]),
+            circuit("Circuito 2 · x4", [
+              ex("Plancha", "40 seg"),
+              ex("Gusanito boca abajo", "x10"),
+              ex("Bicicleta", "x15")
+            ]),
+            circuit("Circuito 3 · x3", [
+              ex("Tijeras", "x15"),
+              ex("Elevaciones", "x15"),
+              ex("Abdominales", "x15")
+            ])
+          ]
+        },
+        {
+          key: "s3-jueves", day: "Jueves", focus: "Torso", type: "torso",
+          circuits: [
+            circuit("Circuito 1 · x3", [
+              ex("Jalón al pecho", "x12"),
+              ex("Remo", "x12"),
+              ex("Polea, agarre 2 cuerdas al pecho", "x12")
+            ]),
+            circuit("Circuito 2 · x3", [
+              ex("Jalón de espalda por encima de la cabeza", "x15")
+            ]),
+            circuit("Circuito 3 · x3", [
+              ex("Banco, brazos arriba con mancuerna hacia atrás", "x15")
+            ])
+          ]
+        },
+        {
+          key: "s3-viernes", day: "Viernes", focus: "Pierna B", type: "pierna2",
+          circuits: [
+            circuit("Circuito 1 · x3", [
+              ex("Sentadilla con mancuerna", "x15"),
+              ex("Zancada con peso", "x15"),
+              ex("Cajón, subir y bajar", "x20")
+            ]),
+            circuit("Circuito 2 · x3", [
+              ex("Puente", "x12"),
+              ex("Patada", "12 por pierna"),
+              ex("La que llega al culito", "x15")
+            ]),
+            circuit("Circuito 3 · x3", [
+              ex("Avanzadas con peso (incluye sentadilla)", "x15"),
+              ex("Trotar hasta el hospital", "")
+            ])
+          ]
+        }
+      ]
+    },
+    {
+      name: "Semana 4",
+      days: [
+        {
+          key: "s4-lunes", day: "Lunes", focus: "Brazo y Hombro", type: "brazo",
+          circuits: [
+            circuit("Circuito 1 · x3", [
+              ex("Jalón a la frente con polea, agarre de cuerdas", "x20"),
+              ex("Polea arriba, codos pegados, bajar y subir", "x20")
+            ]),
+            circuit("Circuito 2 · x3", [
+              ex("Parada frente a la máquina y levantar", "x15"),
+              ex("Sentada al revés, máquina de abrir y cerrar brazos", "x15")
+            ]),
+            circuit("Circuito 3 · x3", [
+              ex("Cajón, sostenerse de espaldas, bajar y subir", "x20")
+            ])
+          ]
+        },
+        {
+          key: "s4-martes", day: "Martes", focus: "Pierna A", type: "pierna1",
+          circuits: [
+            circuit("Circuito 1 · x3", [
+              ex("Peso muerto", "x15"),
+              ex("Sentadilla con barra", "x15"),
+              ex("Prensa (subiendo peso por serie)", "")
+            ]),
+            circuit("Circuito 2 · x3", [
+              ex("Máquina del culito", "x15"),
+              ex("Extensión", "x20"),
+              ex("Aductor de cerrar", "x20")
+            ]),
+            circuit("Circuito 3 · x3", [
+              ex("Hack al revés", "x20"),
+              ex("Aductor al revés", "x30")
+            ])
+          ]
+        },
+        {
+          key: "s4-miercoles", day: "Miércoles", focus: "Abs y Cardio", type: "abs",
+          warmup: "Trote suave y movilidad articular",
+          circuits: [
+            circuit("Circuito 1 · x4", [
+              ex("Burpies", "x15"),
+              ex("Mariposas", "x40"),
+              ex("Tirar balón", "x15")
+            ]),
+            circuit("Circuito 2 · x3", [
+              ex("Plancha tocando hombro", "x15"),
+              ex("Plancha haciendo skippi", "x15"),
+              ex("Trotar hasta el hospital", "")
+            ]),
+            circuit("Circuito 3 · x4", [
+              ex("Acostada, tijera", "1 min"),
+              ex("Acostada, elevaciones", "1 min"),
+              ex("Bicicleta", "x20"),
+              ex("Abdominales", "x20")
+            ])
+          ]
+        },
+        {
+          key: "s4-jueves", day: "Jueves", focus: "Torso", type: "torso",
+          circuits: [
+            circuit("Circuito 1 · x3", [
+              ex("Jalón al pecho", "x15"),
+              ex("Remo", "x15"),
+              ex("Polea, agarre 2 cuerdas al pecho", "x15")
+            ]),
+            circuit("Circuito 2 · x3", [
+              ex("Jalón de espalda por encima de la cabeza", "x20")
+            ]),
+            circuit("Circuito 3 · x3", [
+              ex("Banco, brazos arriba con mancuerna hacia atrás", "x20")
+            ])
+          ]
+        },
+        {
+          key: "s4-viernes", day: "Viernes", focus: "Pierna B", type: "pierna2",
+          circuits: [
+            circuit("Circuito 1 · x3", [
+              ex("Sentadilla con mancuerna", "x20"),
+              ex("Zancada con peso", "x20"),
+              ex("Prensa (subiendo peso por serie)", "")
+            ]),
+            circuit("Circuito 2 · x3", [
+              ex("Puente", "x15"),
+              ex("Patada", "15 por pierna"),
+              ex("La que llega al culito", "x20")
+            ]),
+            circuit("Circuito 3 · x3", [
+              ex("Cajón, subir y bajar", "x20"),
+              ex("Avanzadas con peso (incluye sentadilla)", "x20")
+            ])
+          ]
+        }
+      ]
+    }
+  ];
+
+  // ---- storage (best-effort; iOS Safari may clear it, that's fine) ----
+  var STORAGE_KEY = "rutinaLuisaProgress";
+  var state = {};
+  try {
+    var raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) state = JSON.parse(raw);
+  } catch(e) { state = {}; }
+
+  function saveState(){
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch(e) {}
+  }
+
+  function exId(dayKey, ci, ei){ return dayKey + "-c" + ci + "-e" + ei; }
+
+  // ---- rendering ----
+  var weekTabs = document.getElementById("weekTabs");
+  var daysContainer = document.getElementById("daysContainer");
+  var resetWeekBtn = document.getElementById("resetWeekBtn");
+  var activeWeek = 0;
+
+  function countProgress(day){
+    var total = 0, done = 0;
+    day.circuits.forEach(function(c, ci){
+      c.exercises.forEach(function(ex, ei){
+        total++;
+        if (state[exId(day.key, ci, ei)]) done++;
+      });
+    });
+    return { total: total, done: done };
+  }
+
+  function renderTabs(){
+    weekTabs.innerHTML = "";
+    weeks.forEach(function(w, i){
+      var btn = document.createElement("button");
+      btn.className = "tab" + (i === activeWeek ? " active" : "");
+      btn.textContent = w.name;
+      btn.addEventListener("click", function(){
+        activeWeek = i;
+        renderTabs();
+        renderDays();
+      });
+      weekTabs.appendChild(btn);
+    });
+  }
+
+  function renderDays(){
+    daysContainer.innerHTML = "";
+    var week = weeks[activeWeek];
+    week.days.forEach(function(day, idx){
+      var card = document.createElement("div");
+      card.className = "day-card";
+      card.style.setProperty("--accent", TYPE_COLORS[day.type] || "#999");
+      if (idx === 0) card.classList.add("open");
+
+      var head = document.createElement("div");
+      head.className = "day-head";
+
+      var left = document.createElement("div");
+      left.className = "day-head-left";
+      var name = document.createElement("div");
+      name.className = "day-name";
+      name.textContent = day.day;
+      var focus = document.createElement("div");
+      focus.className = "day-focus";
+      focus.textContent = day.focus;
+      left.appendChild(name);
+      left.appendChild(focus);
+
+      var right = document.createElement("div");
+      right.className = "day-progress";
+      var progLabel = document.createElement("span");
+      var progOuter = document.createElement("div");
+      progOuter.className = "progress-bar-outer";
+      var progInner = document.createElement("div");
+      progInner.className = "progress-bar-inner";
+      progOuter.appendChild(progInner);
+      var chevron = document.createElement("span");
+      chevron.className = "chevron";
+      chevron.innerHTML = CHEVRON_SVG;
+      right.appendChild(progLabel);
+      right.appendChild(progOuter);
+      right.appendChild(chevron);
+
+      head.appendChild(left);
+      head.appendChild(right);
+
+      var body = document.createElement("div");
+      body.className = "day-body";
+
+      if (day.warmup){
+        var warm = document.createElement("div");
+        warm.className = "warmup";
+        warm.innerHTML = WARMUP_SVG + "<span>" + day.warmup + "</span>";
+        body.appendChild(warm);
+      }
+
+      day.circuits.forEach(function(c, ci){
+        var cWrap = document.createElement("div");
+        cWrap.className = "circuit";
+        var cTitle = document.createElement("div");
+        cTitle.className = "circuit-title";
+        cTitle.textContent = c.label;
+        cWrap.appendChild(cTitle);
+
+        c.exercises.forEach(function(exItem, ei){
+          var id = exId(day.key, ci, ei);
+          var row = document.createElement("div");
+          row.className = "exercise";
+
+          var cb = document.createElement("input");
+          cb.type = "checkbox";
+          cb.checked = !!state[id];
+          cb.addEventListener("change", function(){
+            state[id] = cb.checked;
+            saveState();
+            nameEl.classList.toggle("done", cb.checked);
+            updateHeaderProgress();
+          });
+
+          var textWrap = document.createElement("div");
+          textWrap.className = "exercise-text";
+
+          var nameRow = document.createElement("div");
+          nameRow.className = "exercise-name-row";
+          var nameEl = document.createElement("span");
+          nameEl.className = "exercise-name" + (state[id] ? " done" : "");
+          nameEl.textContent = exItem.name;
+          nameRow.appendChild(nameEl);
+
+          var descText = DESCRIPTIONS[exItem.name];
+          if (descText){
+            nameRow.insertAdjacentHTML("beforeend", INFO_CHEVRON_SVG);
+          }
+
+          textWrap.appendChild(nameRow);
+
+          if (exItem.sets){
+            var setsEl = document.createElement("div");
+            setsEl.className = "exercise-sets";
+            setsEl.textContent = exItem.sets;
+            textWrap.appendChild(setsEl);
+          }
+
+          if (descText){
+            var descEl = document.createElement("div");
+            descEl.className = "exercise-desc";
+
+            var imgSlug = EXERCISE_IMAGE[exItem.name];
+            if (imgSlug){
+              var illus = document.createElement("div");
+              illus.className = "exercise-illustration";
+              var img = document.createElement("img");
+              img.src = "assets/" + imgSlug + ".svg";
+              img.alt = "";
+              img.loading = "lazy";
+              illus.appendChild(img);
+              descEl.appendChild(illus);
+            }
+
+            var descTextEl = document.createElement("div");
+            descTextEl.className = "exercise-desc-text";
+            descTextEl.textContent = descText;
+            descEl.appendChild(descTextEl);
+
+            textWrap.appendChild(descEl);
+
+            textWrap.addEventListener("click", function(){
+              textWrap.classList.toggle("open");
+            });
+          }
+
+          row.appendChild(cb);
+          row.appendChild(textWrap);
+          cWrap.appendChild(row);
+        });
+
+        body.appendChild(cWrap);
+      });
+
+      function updateHeaderProgress(){
+        var p = countProgress(day);
+        progLabel.textContent = p.done + "/" + p.total;
+        var pct = p.total ? (p.done / p.total * 100) : 0;
+        progInner.style.width = pct + "%";
+      }
+      updateHeaderProgress();
+
+      head.addEventListener("click", function(){
+        card.classList.toggle("open");
+      });
+
+      card.appendChild(head);
+      card.appendChild(body);
+      daysContainer.appendChild(card);
+    });
+  }
+
+  resetWeekBtn.addEventListener("click", function(){
+    var week = weeks[activeWeek];
+    var ok = confirm("¿Reiniciar el progreso de " + week.name + "?");
+    if (!ok) return;
+    week.days.forEach(function(day){
+      day.circuits.forEach(function(c, ci){
+        c.exercises.forEach(function(ex, ei){
+          delete state[exId(day.key, ci, ei)];
+        });
+      });
+    });
+    saveState();
+    renderDays();
+  });
+
+  renderTabs();
+  renderDays();
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator){
+    window.addEventListener("load", function(){
+      navigator.serviceWorker.register("service-worker.js").catch(function(){});
+    });
+  }
+</script>
+</body>
+</html>

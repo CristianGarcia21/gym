@@ -1,0 +1,912 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rutina de Luisa</title>
+<style>
+  :root{
+    --bg:#f6f4f0;
+    --card:#ffffff;
+    --text:#2b2924;
+    --muted:#726b60;
+    --border:#e7e1d7;
+    --chip:#f0ece3;
+    --brazo:#c9743a;
+    --pierna1:#2f8f5b;
+    --pierna2:#1f6e46;
+    --abs:#2f6fa8;
+    --torso:#7a4fa0;
+    --link:#2f6fa8;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#17150f;
+      --card:#211e17;
+      --text:#f2ede2;
+      --muted:#b4ab9c;
+      --border:#3a3527;
+      --chip:#2b2720;
+      --link:#7fb2e0;
+      --shadow: 0 1px 3px rgba(0,0,0,0.4);
+    }
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    padding-bottom:60px;
+  }
+  header{
+    position:sticky;
+    top:0;
+    background:var(--bg);
+    z-index:10;
+    padding:16px 16px 0 16px;
+    border-bottom:1px solid var(--border);
+  }
+  h1{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:1.3rem;
+    margin:0 0 12px 0;
+  }
+  h1 svg{
+    width:24px;
+    height:24px;
+    flex:0 0 auto;
+    color:var(--text);
+  }
+  .tabs{
+    display:flex;
+    gap:6px;
+    overflow-x:auto;
+    padding-bottom:12px;
+    -webkit-overflow-scrolling:touch;
+  }
+  .tab{
+    flex:0 0 auto;
+    padding:8px 16px;
+    border-radius:999px;
+    border:1px solid var(--border);
+    background:var(--card);
+    color:var(--text);
+    font-size:0.9rem;
+    cursor:pointer;
+    white-space:nowrap;
+  }
+  .tab.active{
+    background:var(--text);
+    color:var(--bg);
+    border-color:var(--text);
+  }
+  main{
+    padding:16px;
+    max-width:640px;
+    margin:0 auto;
+  }
+  .week-actions{
+    display:flex;
+    justify-content:flex-end;
+    margin-bottom:12px;
+  }
+  .btn-ghost{
+    background:none;
+    border:1px solid var(--border);
+    color:var(--muted);
+    padding:6px 12px;
+    border-radius:8px;
+    font-size:0.8rem;
+    cursor:pointer;
+  }
+  .day-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-left:5px solid var(--accent, #999);
+    border-radius:12px;
+    margin-bottom:12px;
+    box-shadow:var(--shadow);
+    overflow:hidden;
+  }
+  .day-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 16px;
+    cursor:pointer;
+  }
+  .day-head-left{
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+  }
+  .day-name{
+    font-weight:700;
+    font-size:1rem;
+  }
+  .day-focus{
+    font-size:0.82rem;
+    color:var(--muted);
+  }
+  .day-progress{
+    font-size:0.8rem;
+    color:var(--muted);
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .chevron{
+    width:14px;
+    height:14px;
+    flex:0 0 auto;
+    color:var(--muted);
+    transition:transform 0.15s ease;
+  }
+  .day-card.open .chevron{
+    transform:rotate(90deg);
+  }
+  .day-body{
+    display:none;
+    padding:0 16px 14px 16px;
+  }
+  .day-card.open .day-body{
+    display:block;
+  }
+  .warmup{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:0.85rem;
+    color:var(--muted);
+    background:var(--chip);
+    padding:8px 10px;
+    border-radius:8px;
+    margin-bottom:10px;
+  }
+  .warmup svg{
+    width:16px;
+    height:16px;
+    flex:0 0 auto;
+  }
+  .circuit{
+    margin-bottom:12px;
+  }
+  .circuit-title{
+    font-size:0.78rem;
+    text-transform:uppercase;
+    letter-spacing:0.03em;
+    color:var(--muted);
+    margin-bottom:6px;
+  }
+  .exercise{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    padding:8px 0;
+    border-bottom:1px solid var(--border);
+  }
+  .exercise:last-child{
+    border-bottom:none;
+  }
+  .exercise input[type=checkbox]{
+    width:20px;
+    height:20px;
+    flex:0 0 auto;
+    margin-top:2px;
+    accent-color:var(--accent, #333);
+  }
+  .exercise-text{
+    flex:1;
+    min-width:0;
+  }
+  .exercise-name-row{
+    display:flex;
+    align-items:baseline;
+    gap:8px;
+    flex-wrap:wrap;
+  }
+  .exercise-name{
+    font-size:0.92rem;
+    line-height:1.3;
+  }
+  .exercise-name.done{
+    text-decoration:line-through;
+    color:var(--muted);
+  }
+  .exercise-sets{
+    font-size:0.78rem;
+    color:var(--muted);
+    margin-top:1px;
+  }
+  .guide-link{
+    display:inline-flex;
+    align-items:center;
+    gap:3px;
+    font-size:0.72rem;
+    color:var(--link);
+    text-decoration:none;
+    border:1px solid var(--border);
+    border-radius:999px;
+    padding:2px 8px 2px 6px;
+    white-space:nowrap;
+  }
+  .guide-link svg{
+    width:11px;
+    height:11px;
+    flex:0 0 auto;
+  }
+  .progress-bar-outer{
+    width:52px;
+    height:6px;
+    background:var(--border);
+    border-radius:999px;
+    overflow:hidden;
+  }
+  .progress-bar-inner{
+    height:100%;
+    background:var(--accent,#333);
+  }
+  footer{
+    text-align:center;
+    color:var(--muted);
+    font-size:0.75rem;
+    padding:16px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6.5 6.5 17.5 17.5"></path>
+      <path d="M4 8 8 4l2 2-4 4-2-2Z"></path>
+      <path d="M16 20l4-4-2-2-4 4 2 2Z"></path>
+      <path d="M2.5 15.5l2-2"></path>
+      <path d="M19.5 6.5l2 2"></path>
+    </svg>
+    Rutina de Luisa
+  </h1>
+  <div class="tabs" id="weekTabs"></div>
+</header>
+
+<main>
+  <div class="week-actions">
+    <button class="btn-ghost" id="resetWeekBtn">Reiniciar semana</button>
+  </div>
+  <div id="daysContainer"></div>
+</main>
+
+<footer>Marca las series a medida que las haces. El progreso se guarda en este dispositivo.</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  var TYPE_COLORS = {
+    brazo: "var(--brazo)",
+    pierna1: "var(--pierna1)",
+    pierna2: "var(--pierna2)",
+    abs: "var(--abs)",
+    torso: "var(--torso)"
+  };
+
+  var GUIDE_BASE = "https://bryllim.github.io/workout-guide/exercises/";
+
+  var CHEVRON_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg>';
+  var WARMUP_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"></circle><path d="M12 9v4l3 2"></path><path d="M9 2h6"></path></svg>';
+  var LINK_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6"></path><path d="M20 4 10 14"></path><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"></path></svg>';
+
+  function ex(name, sets, slug){ return { name: name, sets: sets, slug: slug }; }
+  function circuit(label, exercises){ return { label: label, exercises: exercises }; }
+
+  var weeks = [
+    {
+      name: "Semana 1",
+      days: [
+        {
+          key: "s1-lunes", day: "Lunes", focus: "Brazo y Hombro", type: "brazo",
+          circuits: [
+            circuit("Circuito 1 · x3", [
+              ex("Curl de bíceps con barra", "x12", "bicep-curl"),
+              ex("Curl martillo con mancuerna", "x12", "hammer-curl"),
+              ex("Extensión de tríceps en polea", "x15", "tricep-pushdown")
+            ]),
+            circuit("Circuito 2 · x3", [
+              ex("Jalón a la frente con polea, agarre de cuerdas", "x15", "face-pull"),
+              ex("Parada frente a la máquina y levantar", "x10", "machine-shoulder-press"),
+              ex("Sentada al revés, máquina de abrir y cerrar brazos", "x10", "reverse-pec-deck")
+            ]),
+            circuit("Circuito 3 · x3", [
+              ex("Press francés con mancuerna", "x12", "skull-crusher"),
+              ex("Elevación lateral con mancuerna", "x15", "lateral-raise")
+            ])
+          ]
+        },
+        {
+          key: "s1-martes", day: "Martes", focus: "Pierna A", type: "pierna1",
+          circuits: [
+            circuit("Circuito 1 · x3", [
+              ex("Peso muerto", "x10", "deadlift"),
+              ex("Máquina del culito", "x10", "hip-thrust"),
+              ex("Aductor al revés", "x20", "hip-abduction-machine")
+            ]),
+            circuit("Circuito 2 · x3", [
+              ex("Sentadilla con barra", "x10", "squat"),
+              ex("Extensión", "x10", "leg-extension"),
+              ex("Aductor de cerrar", "x20", "hip-adduction-machine")
+            ]),
+            circuit("Circuito 3 · x3", [
+              ex("Sentadilla búlgara", "x10 por pierna", "bulgarian-split-squat"),
+              ex("Puente", "x12", "glute-bridge")
+            ])
+          ]
+        },
+        {
+          key: "s1-miercoles", day: "Miércoles", focus: "Abs y Cardio", type: "abs",
+          warmup: "Trote suave y movilidad articular",
+          circuits: [
+            circuit("Circuito 1 · x3", [
+              ex("Burpies", "x10", "burpee"),
+              ex("Mariposas", "x40", "jumping-jack"),
+              ex("Coger balón y lanzar hacia arriba", "")
+            ]),
+            circuit("Circuito 2 · x3", [
+              ex("Plancha tocando hombro", "x10", "plank-shoulder-tap"),
+              ex("Vuelta al gimnasio (trote)", "", "running"),
+              ex("Plancha haciendo skippi", "", "mountain-climber")
+            ]),
+            circuit("Circuito 3 · x4", [
+              ex("Acostada, caminado", "1 min"),
+              ex("Acostada, tijera", "1 min", "flutter-kick"),
+              ex("Acostada, elevaciones", "1 min", "lying-leg-raise")
+            ])
+          ]
+        },
+        {
+          key: "s1-jueves", day: "Jueves", focus: "Torso", type: "torso",
+          circuits: [
+            circuit("Circuito 1 · x3", [
+              ex("Jalón al pecho", "x10", "lat-pulldown"),
+              ex("Remo", "x10", "seated-row"),
+              ex("Polea, agarre 2 cuerdas al pecho", "x10", "seated-row")
+            ]),
+            circuit("Circuito 2 · x3", [
+              ex("Jalón de espalda por encima de la cabeza", "x15", "wide-grip-lat-pulldown"),
+              ex("Banco, brazos arriba con mancuerna hacia atrás", "x15"),
+              ex("Cajón, sostenerse de espaldas, bajar y subir", "x15", "bench-dip")
+            ]),
+            circuit("Circuito 3 · x3", [
+              ex("Encogimiento de hombros con barra", "x15", "shrug"),
+              ex("Extensión de espalda (hiperextensión)", "x12", "back-extension")
+            ])
+          ]
+        },
+        {
+          key: "s1-viernes", day: "Viernes", focus: "Pierna B", type: "pierna2",
+          circuits: [
+            circuit("Circuito 1 · x3", [
+              ex("La que llega al culito", "2x15", "machine-glute-kickback"),
+              ex("Patada", "10 por pierna", "donkey-kick"),
+              ex("Puente", "3x10", "glute-bridge")
+            ]),
+            circuit("Circuito 2 · x3", [
+              ex("Hack al revés", "2x10", "hack-squat"),
+              ex("Zancada con peso", "x15", "walking-lunge")
+            ]),
+            circuit("Circuito 3 · x3", [
+              ex("Step-down (bajada controlada del cajón)", "x12 por pierna", "step-down"),
+              ex("Sentadilla con mancuerna", "x15", "goblet-squat")
+            ])
+          ]
+        }
+      ]
+    },
+    {
+      name: "Semana 2",
+      days: [
+        {
+          key: "s2-lunes", day: "Lunes", focus: "Brazo y Hombro", type: "brazo",
+          circuits: [
+            circuit("Circuito 1 · x3", [
+              ex("Curl de bíceps con mancuerna", "x12", "bicep-curl"),
+              ex("Curl martillo", "x12", "hammer-curl"),
+              ex("Polea arriba, codos pegados, bajar y subir", "x15", "tricep-pushdown")
+            ]),
+            circuit("Circuito 2 · x3", [
+              ex("Press francés", "x12", "skull-crusher"),
+              ex("Parada frente a la máquina y levantar", "x10", "machine-shoulder-press")
+            ]),
+            circuit("Circuito 3 · x3", [
+              ex("Sentada al revés, máquina de abrir y cerrar brazos", "x10", "reverse-pec-deck"),
+              ex("Jalón a la frente con polea, agarre de cuerdas", "x10", "face-pull")
+            ])
+          ]
+        },
+        {
+          key: "s2-martes", day: "Martes", focus: "Pierna A", type: "pierna1",
+          circuits: [
+            circuit("Circuito 1 · x3", [
+              ex("Extensión", "x10 / x15 / x20", "leg-extension"),
+              ex("Aductor al revés", "x20 / x20 / x30", "hip-abduction-machine"),
+              ex("Hack al revés", "x15", "hack-squat")
+            ]),
+            circuit("Circuito 2 · x3", [
+              ex("Avanzadas con peso (incluye sentadilla)", "", "walking-lunge"),
+              ex("Peso muerto", "x15", "deadlift")
+            ]),
+            circuit("Circuito 3 · x4", [
+              ex("Acostada boca arriba, mancuerna en la pelvis, elevación con cada pie", "", "glute-bridge-march"),
+              ex("Acostada boca arriba, mancuerna en la pelvis, levantarse con los dos pies", "", "dumbbell-hip-thrust")
+            ])
+          ]
+        },
+        {
+          key: "s2-miercoles", day: "Miércoles", focus: "Abs y Cardio", type: "abs",
+          circuits: [
+            circuit("Circuito 1 · x3", [
+              ex("Cajón, subir y bajar", "x20", "step-up"),
+              ex("Tirar balón", "x15"),
+              ex("Remo en máquina (cardio)", "40 seg", "rowing"),
+              ex("Gusanito boca abajo", "", "inchworm"),
+              ex("Plancha", "", "plank")
+            ]),
+            circuit("Circuito 2 · x2", [
+              ex("Trotar hasta el hospital", "", "running"),
+              ex("Burpies", "x10", "burpee")
+            ]),
+            circuit("Circuito 3 · x5", [
+              ex("Abdominales", "x10", "crunch"),
+              ex("Elevaciones", "x10", "lying-leg-raise"),
+              ex("Tijeras", "x10", "flutter-kick")
+            ])
+          ]
+        },
+        {
+          key: "s2-jueves", day: "Jueves", focus: "Torso", type: "torso",
+          circuits: [
+            circuit("Circuito 1 · x3", [
+              ex("Jalón de espalda por encima de la cabeza", "x15", "wide-grip-lat-pulldown"),
+              ex("Cajón, sostenerse de espaldas, bajar y subir", "x15", "bench-dip"),
+              ex("Banco, brazos arriba con mancuerna hacia atrás", "x15")
+            ]),
+            circuit("Circuito 2 · x3", [
+              ex("Jalón al pecho", "x10", "lat-pulldown"),
+              ex("Remo", "x10", "seated-row"),
+              ex("Polea, agarre 2 cuerdas al pecho", "x10", "seated-row")
+            ]),
+            circuit("Circuito 3 · x3", [
+              ex("Encogimiento de hombros con barra", "x15", "shrug"),
+              ex("Extensión de espalda (hiperextensión)", "x12", "back-extension")
+            ])
+          ]
+        },
+        {
+          key: "s2-viernes", day: "Viernes", focus: "Pierna B", type: "pierna2",
+          circuits: [
+            circuit("Circuito 1 · x3", [
+              ex("Sentadilla con mancuerna", "x20", "goblet-squat"),
+              ex("Prensa (subiendo peso por serie)", "", "leg-press")
+            ]),
+            circuit("Circuito 2 · x3", [
+              ex("Zancada con peso", "", "walking-lunge"),
+              ex("Aductor de cerrar", "x15", "hip-adduction-machine")
+            ]),
+            circuit("Circuito 3 · x3", [
+              ex("Extensión", "x15", "leg-extension"),
+              ex("Patada hacia atrás", "10 por pierna", "donkey-kick"),
+              ex("Hack al revés", "x15", "hack-squat")
+            ])
+          ]
+        }
+      ]
+    },
+    {
+      name: "Semana 3",
+      days: [
+        {
+          key: "s3-lunes", day: "Lunes", focus: "Brazo y Hombro", type: "brazo",
+          circuits: [
+            circuit("Circuito 1 · x3", [
+              ex("Curl de bíceps con barra", "x12", "bicep-curl"),
+              ex("Curl martillo con mancuerna", "x12", "hammer-curl"),
+              ex("Extensión de tríceps en polea", "x15", "tricep-pushdown")
+            ]),
+            circuit("Circuito 2 · x3", [
+              ex("Press francés con mancuerna", "x12", "skull-crusher"),
+              ex("Sentada al revés, máquina de abrir y cerrar brazos", "x12", "reverse-pec-deck")
+            ]),
+            circuit("Circuito 3 · x3", [
+              ex("Parada frente a la máquina y levantar", "x12", "machine-shoulder-press"),
+              ex("Jalón a la frente con polea, agarre de cuerdas", "x15", "face-pull")
+            ])
+          ]
+        },
+        {
+          key: "s3-martes", day: "Martes", focus: "Pierna A", type: "pierna1",
+          circuits: [
+            circuit("Circuito 1 · x3", [
+              ex("Sentadilla con barra", "x12", "squat"),
+              ex("Prensa (subiendo peso por serie)", "", "leg-press"),
+              ex("Extensión", "x15", "leg-extension")
+            ]),
+            circuit("Circuito 2 · x3", [
+              ex("Peso muerto", "x12", "deadlift"),
+              ex("Máquina del culito", "x12", "hip-thrust"),
+              ex("Aductor de cerrar", "x20", "hip-adduction-machine")
+            ]),
+            circuit("Circuito 3 · x3", [
+              ex("Hack al revés", "x15", "hack-squat"),
+              ex("Aductor al revés", "x20", "hip-abduction-machine")
+            ])
+          ]
+        },
+        {
+          key: "s3-miercoles", day: "Miércoles", focus: "Abs y Cardio", type: "abs",
+          warmup: "Trote suave y movilidad articular",
+          circuits: [
+            circuit("Circuito 1 · x3", [
+              ex("Burpies", "x12", "burpee"),
+              ex("Remo en máquina (cardio)", "40 seg", "rowing"),
+              ex("Coger balón y lanzar hacia arriba", "")
+            ]),
+            circuit("Circuito 2 · x4", [
+              ex("Plancha", "40 seg", "plank"),
+              ex("Gusanito boca abajo", "x10", "inchworm"),
+              ex("Bicicleta", "x15", "bicycle-crunch")
+            ]),
+            circuit("Circuito 3 · x3", [
+              ex("Tijeras", "x15", "flutter-kick"),
+              ex("Elevaciones", "x15", "lying-leg-raise"),
+              ex("Abdominales", "x15", "crunch")
+            ])
+          ]
+        },
+        {
+          key: "s3-jueves", day: "Jueves", focus: "Torso", type: "torso",
+          circuits: [
+            circuit("Circuito 1 · x3", [
+              ex("Jalón al pecho", "x12", "lat-pulldown"),
+              ex("Remo", "x12", "seated-row"),
+              ex("Polea, agarre 2 cuerdas al pecho", "x12", "seated-row")
+            ]),
+            circuit("Circuito 2 · x3", [
+              ex("Jalón de espalda por encima de la cabeza", "x15", "wide-grip-lat-pulldown"),
+              ex("Banco, brazos arriba con mancuerna hacia atrás", "x15")
+            ]),
+            circuit("Circuito 3 · x3", [
+              ex("Cajón, sostenerse de espaldas, bajar y subir", "x15", "bench-dip"),
+              ex("Extensión de espalda (hiperextensión)", "x12", "back-extension")
+            ])
+          ]
+        },
+        {
+          key: "s3-viernes", day: "Viernes", focus: "Pierna B", type: "pierna2",
+          circuits: [
+            circuit("Circuito 1 · x3", [
+              ex("Sentadilla búlgara", "x10 por pierna", "bulgarian-split-squat"),
+              ex("Zancada con peso", "x15", "walking-lunge"),
+              ex("Cajón, subir y bajar", "x20", "step-up")
+            ]),
+            circuit("Circuito 2 · x3", [
+              ex("Puente", "x12", "glute-bridge"),
+              ex("Patada", "12 por pierna", "donkey-kick"),
+              ex("La que llega al culito", "x15", "machine-glute-kickback")
+            ]),
+            circuit("Circuito 3 · x3", [
+              ex("Avanzadas con peso (incluye sentadilla)", "x15", "walking-lunge"),
+              ex("Trotar hasta el hospital", "", "running")
+            ])
+          ]
+        }
+      ]
+    },
+    {
+      name: "Semana 4",
+      days: [
+        {
+          key: "s4-lunes", day: "Lunes", focus: "Brazo y Hombro", type: "brazo",
+          circuits: [
+            circuit("Circuito 1 · x3", [
+              ex("Curl de bíceps con barra", "x15", "bicep-curl"),
+              ex("Curl martillo con mancuerna", "x15", "hammer-curl"),
+              ex("Press francés con mancuerna", "x15", "skull-crusher")
+            ]),
+            circuit("Circuito 2 · x3", [
+              ex("Extensión de tríceps en polea", "x20", "tricep-pushdown"),
+              ex("Jalón a la frente con polea, agarre de cuerdas", "x20", "face-pull")
+            ]),
+            circuit("Circuito 3 · x3", [
+              ex("Parada frente a la máquina y levantar", "x15", "machine-shoulder-press"),
+              ex("Sentada al revés, máquina de abrir y cerrar brazos", "x15", "reverse-pec-deck")
+            ])
+          ]
+        },
+        {
+          key: "s4-martes", day: "Martes", focus: "Pierna A", type: "pierna1",
+          circuits: [
+            circuit("Circuito 1 · x3", [
+              ex("Peso muerto", "x15", "deadlift"),
+              ex("Sentadilla con barra", "x15", "squat"),
+              ex("Prensa (subiendo peso por serie)", "", "leg-press")
+            ]),
+            circuit("Circuito 2 · x3", [
+              ex("Máquina del culito", "x15", "hip-thrust"),
+              ex("Extensión", "x20", "leg-extension"),
+              ex("Aductor de cerrar", "x20", "hip-adduction-machine")
+            ]),
+            circuit("Circuito 3 · x3", [
+              ex("Hack al revés", "x20", "hack-squat"),
+              ex("Aductor al revés", "x30", "hip-abduction-machine")
+            ])
+          ]
+        },
+        {
+          key: "s4-miercoles", day: "Miércoles", focus: "Abs y Cardio", type: "abs",
+          warmup: "Trote suave y movilidad articular",
+          circuits: [
+            circuit("Circuito 1 · x4", [
+              ex("Burpies", "x15", "burpee"),
+              ex("Mariposas", "x40", "jumping-jack"),
+              ex("Remo en máquina (cardio)", "40 seg", "rowing")
+            ]),
+            circuit("Circuito 2 · x3", [
+              ex("Plancha tocando hombro", "x15", "plank-shoulder-tap"),
+              ex("Plancha haciendo skippi", "x15", "mountain-climber"),
+              ex("Trotar hasta el hospital", "", "running")
+            ]),
+            circuit("Circuito 3 · x4", [
+              ex("Acostada, tijera", "1 min", "flutter-kick"),
+              ex("Acostada, elevaciones", "1 min", "lying-leg-raise"),
+              ex("Bicicleta", "x20", "bicycle-crunch"),
+              ex("Abdominales", "x20", "crunch")
+            ])
+          ]
+        },
+        {
+          key: "s4-jueves", day: "Jueves", focus: "Torso", type: "torso",
+          circuits: [
+            circuit("Circuito 1 · x3", [
+              ex("Jalón al pecho", "x15", "lat-pulldown"),
+              ex("Remo", "x15", "seated-row"),
+              ex("Polea, agarre 2 cuerdas al pecho", "x15", "seated-row")
+            ]),
+            circuit("Circuito 2 · x3", [
+              ex("Jalón de espalda por encima de la cabeza", "x20", "wide-grip-lat-pulldown"),
+              ex("Banco, brazos arriba con mancuerna hacia atrás", "x20"),
+              ex("Cajón, sostenerse de espaldas, bajar y subir", "x20", "bench-dip")
+            ]),
+            circuit("Circuito 3 · x3", [
+              ex("Encogimiento de hombros con barra", "x20", "shrug"),
+              ex("Extensión de espalda (hiperextensión)", "x15", "back-extension")
+            ])
+          ]
+        },
+        {
+          key: "s4-viernes", day: "Viernes", focus: "Pierna B", type: "pierna2",
+          circuits: [
+            circuit("Circuito 1 · x3", [
+              ex("Sentadilla búlgara", "x10 por pierna", "bulgarian-split-squat"),
+              ex("Zancada con peso", "x20", "walking-lunge"),
+              ex("Step-down (bajada controlada del cajón)", "x12 por pierna", "step-down")
+            ]),
+            circuit("Circuito 2 · x3", [
+              ex("Puente", "x15", "glute-bridge"),
+              ex("Patada", "15 por pierna", "donkey-kick"),
+              ex("La que llega al culito", "x20", "machine-glute-kickback")
+            ]),
+            circuit("Circuito 3 · x3", [
+              ex("Cajón, subir y bajar", "x20", "step-up"),
+              ex("Avanzadas con peso (incluye sentadilla)", "x20", "walking-lunge")
+            ])
+          ]
+        }
+      ]
+    }
+  ];
+
+  // ---- storage (best-effort; iOS Safari may clear it, that's fine) ----
+  var STORAGE_KEY = "rutinaLuisaProgress";
+  var state = {};
+  try {
+    var raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) state = JSON.parse(raw);
+  } catch(e) { state = {}; }
+
+  function saveState(){
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch(e) {}
+  }
+
+  function exId(dayKey, ci, ei){ return dayKey + "-c" + ci + "-e" + ei; }
+
+  // ---- rendering ----
+  var weekTabs = document.getElementById("weekTabs");
+  var daysContainer = document.getElementById("daysContainer");
+  var resetWeekBtn = document.getElementById("resetWeekBtn");
+  var activeWeek = 0;
+
+  function countProgress(day){
+    var total = 0, done = 0;
+    day.circuits.forEach(function(c, ci){
+      c.exercises.forEach(function(ex, ei){
+        total++;
+        if (state[exId(day.key, ci, ei)]) done++;
+      });
+    });
+    return { total: total, done: done };
+  }
+
+  function renderTabs(){
+    weekTabs.innerHTML = "";
+    weeks.forEach(function(w, i){
+      var btn = document.createElement("button");
+      btn.className = "tab" + (i === activeWeek ? " active" : "");
+      btn.textContent = w.name;
+      btn.addEventListener("click", function(){
+        activeWeek = i;
+        renderTabs();
+        renderDays();
+      });
+      weekTabs.appendChild(btn);
+    });
+  }
+
+  function renderDays(){
+    daysContainer.innerHTML = "";
+    var week = weeks[activeWeek];
+    week.days.forEach(function(day, idx){
+      var card = document.createElement("div");
+      card.className = "day-card";
+      card.style.setProperty("--accent", TYPE_COLORS[day.type] || "#999");
+      if (idx === 0) card.classList.add("open");
+
+      var head = document.createElement("div");
+      head.className = "day-head";
+
+      var left = document.createElement("div");
+      left.className = "day-head-left";
+      var name = document.createElement("div");
+      name.className = "day-name";
+      name.textContent = day.day;
+      var focus = document.createElement("div");
+      focus.className = "day-focus";
+      focus.textContent = day.focus;
+      left.appendChild(name);
+      left.appendChild(focus);
+
+      var right = document.createElement("div");
+      right.className = "day-progress";
+      var progLabel = document.createElement("span");
+      var progOuter = document.createElement("div");
+      progOuter.className = "progress-bar-outer";
+      var progInner = document.createElement("div");
+      progInner.className = "progress-bar-inner";
+      progOuter.appendChild(progInner);
+      var chevron = document.createElement("span");
+      chevron.className = "chevron";
+      chevron.innerHTML = CHEVRON_SVG;
+      right.appendChild(progLabel);
+      right.appendChild(progOuter);
+      right.appendChild(chevron);
+
+      head.appendChild(left);
+      head.appendChild(right);
+
+      var body = document.createElement("div");
+      body.className = "day-body";
+
+      if (day.warmup){
+        var warm = document.createElement("div");
+        warm.className = "warmup";
+        warm.innerHTML = WARMUP_SVG + "<span>" + day.warmup + "</span>";
+        body.appendChild(warm);
+      }
+
+      day.circuits.forEach(function(c, ci){
+        var cWrap = document.createElement("div");
+        cWrap.className = "circuit";
+        var cTitle = document.createElement("div");
+        cTitle.className = "circuit-title";
+        cTitle.textContent = c.label;
+        cWrap.appendChild(cTitle);
+
+        c.exercises.forEach(function(exItem, ei){
+          var id = exId(day.key, ci, ei);
+          var row = document.createElement("div");
+          row.className = "exercise";
+
+          var cbLabel = document.createElement("label");
+          cbLabel.style.display = "contents";
+
+          var cb = document.createElement("input");
+          cb.type = "checkbox";
+          cb.checked = !!state[id];
+          cb.addEventListener("change", function(){
+            state[id] = cb.checked;
+            saveState();
+            nameEl.classList.toggle("done", cb.checked);
+            updateHeaderProgress();
+          });
+
+          var textWrap = document.createElement("div");
+          textWrap.className = "exercise-text";
+
+          var nameRow = document.createElement("div");
+          nameRow.className = "exercise-name-row";
+          var nameEl = document.createElement("span");
+          nameEl.className = "exercise-name" + (state[id] ? " done" : "");
+          nameEl.textContent = exItem.name;
+          nameRow.appendChild(nameEl);
+
+          if (exItem.slug){
+            var guideLink = document.createElement("a");
+            guideLink.className = "guide-link";
+            guideLink.href = GUIDE_BASE + exItem.slug + "/";
+            guideLink.target = "_blank";
+            guideLink.rel = "noopener noreferrer";
+            guideLink.innerHTML = LINK_SVG + "<span>Ver ejercicio</span>";
+            guideLink.addEventListener("click", function(evt){ evt.stopPropagation(); });
+            nameRow.appendChild(guideLink);
+          }
+
+          textWrap.appendChild(nameRow);
+
+          if (exItem.sets){
+            var setsEl = document.createElement("div");
+            setsEl.className = "exercise-sets";
+            setsEl.textContent = exItem.sets;
+            textWrap.appendChild(setsEl);
+          }
+
+          cbLabel.appendChild(cb);
+          cbLabel.appendChild(textWrap);
+          row.appendChild(cbLabel);
+          cWrap.appendChild(row);
+        });
+
+        body.appendChild(cWrap);
+      });
+
+      function updateHeaderProgress(){
+        var p = countProgress(day);
+        progLabel.textContent = p.done + "/" + p.total;
+        var pct = p.total ? (p.done / p.total * 100) : 0;
+        progInner.style.width = pct + "%";
+      }
+      updateHeaderProgress();
+
+      head.addEventListener("click", function(){
+        card.classList.toggle("open");
+      });
+
+      card.appendChild(head);
+      card.appendChild(body);
+      daysContainer.appendChild(card);
+    });
+  }
+
+  resetWeekBtn.addEventListener("click", function(){
+    var week = weeks[activeWeek];
+    var ok = confirm("¿Reiniciar el progreso de " + week.name + "?");
+    if (!ok) return;
+    week.days.forEach(function(day){
+      day.circuits.forEach(function(c, ci){
+        c.exercises.forEach(function(ex, ei){
+          delete state[exId(day.key, ci, ei)];
+        });
+      });
+    });
+    saveState();
+    renderDays();
+  });
+
+  renderTabs();
+  renderDays();
+})();
+</script>
+</body>
+</html>
