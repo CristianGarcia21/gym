@@ -249,16 +249,16 @@
   }
   .exercise-text.open .exercise-desc{
     display:flex;
-    gap:10px;
-    align-items:flex-start;
+    flex-direction:column;
+    gap:8px;
   }
   .exercise-illustration{
-    flex:0 0 auto;
-    width:64px;
-    height:64px;
+    align-self:center;
+    width:min(180px, 60vw);
+    height:min(180px, 60vw);
     background:#26241f;
-    border-radius:8px;
-    padding:6px;
+    border-radius:10px;
+    padding:10px;
   }
   .exercise-illustration img{
     width:100%;
@@ -971,11 +971,13 @@
             descEl.className = "exercise-desc";
 
             var imgSlug = EXERCISE_IMAGE[exItem.name];
+            var cycleTimer = null;
+            var img = null;
             if (imgSlug){
               var illus = document.createElement("div");
               illus.className = "exercise-illustration";
-              var img = document.createElement("img");
-              img.src = "assets/" + imgSlug + ".svg";
+              img = document.createElement("img");
+              img.src = "assets/" + imgSlug + "-1.svg";
               img.alt = "";
               img.loading = "lazy";
               illus.appendChild(img);
@@ -990,7 +992,19 @@
             textWrap.appendChild(descEl);
 
             textWrap.addEventListener("click", function(){
+              var opening = !textWrap.classList.contains("open");
               textWrap.classList.toggle("open");
+              if (opening && img){
+                var frame = 1;
+                cycleTimer = setInterval(function(){
+                  frame = (frame % 3) + 1;
+                  img.src = "assets/" + imgSlug + "-" + frame + ".svg";
+                }, 900);
+              } else if (cycleTimer){
+                clearInterval(cycleTimer);
+                cycleTimer = null;
+                if (img) img.src = "assets/" + imgSlug + "-1.svg";
+              }
             });
           }
 
