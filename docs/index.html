@@ -386,7 +386,16 @@
     "Tijeras": "Acostada boca arriba con las piernas estiradas, sube y baja las piernas alternando como una tijera.",
     "Gusanito boca abajo": "De pie, baja las manos al piso y camina con ellas hacia adelante hasta quedar en plancha, y regresa.",
     "Plancha": "Mantén el cuerpo recto apoyado en antebrazos y puntas de los pies, sin dejar caer la cadera.",
-    "Bicicleta": "Acostada boca arriba, lleva el codo contrario a la rodilla alternando, como pedaleando una bicicleta."
+    "Bicicleta": "Acostada boca arriba, lleva el codo contrario a la rodilla alternando, como pedaleando una bicicleta.",
+    "Curl de bíceps con barra": "De pie, con la barra frente a los muslos, flexiona los codos subiendo la barra hacia el pecho sin mover los hombros, y baja controlando.",
+    "Curl de bíceps con mancuerna": "De pie o sentada, flexiona el codo subiendo la mancuerna hacia el hombro sin balancear el cuerpo, y baja controlando.",
+    "Curl martillo con mancuerna": "Igual que el curl de bíceps pero con la palma mirando hacia adentro durante todo el movimiento, sin girar la muñeca.",
+    "Press de hombro con mancuerna": "Con una mancuerna en cada mano a la altura de los hombros, empuja hacia arriba hasta casi extender los codos, y baja controlando.",
+    "Elevación lateral con mancuerna": "De pie con una mancuerna en cada mano a los lados, sube los brazos hacia afuera hasta la altura de los hombros, y baja controlando.",
+    "Remo con mancuerna, un brazo": "Apoya una rodilla y una mano en el banco, y con el otro brazo tira la mancuerna hacia la cadera llevando el codo hacia atrás.",
+    "Jalón al pecho, agarre cerrado": "Igual que el jalón al pecho, pero con las manos juntas en el centro de la barra, tirando hacia el pecho con los codos pegados al cuerpo.",
+    "Remo en polea baja, codos pegados": "Sentada frente a la polea baja, tira del agarre hacia el abdomen manteniendo los codos pegados al cuerpo y la espalda recta.",
+    "Jalón al pecho, agarre supino": "Igual que el jalón al pecho, pero con las palmas mirando hacia ti, tirando la barra hacia el pecho."
   };
 
   // ---- illustrations, self-hosted from assets/ (CC BY-SA 4.0, see footer credit) ----
@@ -431,7 +440,16 @@
     "Tijeras": "flutter-kick",
     "Gusanito boca abajo": "inchworm",
     "Plancha": "plank",
-    "Bicicleta": "bicycle-crunch"
+    "Bicicleta": "bicycle-crunch",
+    "Curl de bíceps con barra": "bicep-curl",
+    "Curl de bíceps con mancuerna": "bicep-curl",
+    "Curl martillo con mancuerna": "hammer-curl",
+    "Press de hombro con mancuerna": "standing-dumbbell-press",
+    "Elevación lateral con mancuerna": "lateral-raise",
+    "Remo con mancuerna, un brazo": "one-arm-dumbbell-row",
+    "Jalón al pecho, agarre cerrado": "close-grip-lat-pulldown",
+    "Remo en polea baja, codos pegados": "seated-row",
+    "Jalón al pecho, agarre supino": "lat-pulldown"
   };
 
   function ex(name, sets){ return { name: name, sets: sets }; }
@@ -540,15 +558,15 @@
           key: "s2-lunes", day: "Lunes", focus: "Brazo y Hombro", type: "brazo",
           circuits: [
             circuit("Circuito 1 · x3", [
-              ex("Jalón a la frente con polea, agarre de cuerdas", "x10"),
-              ex("Parada frente a la máquina y levantar", "x10")
+              ex("Curl de bíceps con barra", "x12"),
+              ex("Curl de bíceps con mancuerna", "x12")
             ]),
             circuit("Circuito 2 · x3", [
-              ex("Sentada al revés, máquina de abrir y cerrar brazos", "x10"),
-              ex("Polea arriba, codos pegados, bajar y subir", "x15")
+              ex("Curl martillo con mancuerna", "x12"),
+              ex("Press de hombro con mancuerna", "x10")
             ]),
             circuit("Circuito 3 · x3", [
-              ex("Cajón, sostenerse de espaldas, bajar y subir", "x15")
+              ex("Elevación lateral con mancuerna", "x15")
             ])
           ]
         },
@@ -595,15 +613,15 @@
           key: "s2-jueves", day: "Jueves", focus: "Torso", type: "torso",
           circuits: [
             circuit("Circuito 1 · x3", [
-              ex("Jalón de espalda por encima de la cabeza", "x15"),
-              ex("Banco, brazos arriba con mancuerna hacia atrás", "x15")
+              ex("Remo con mancuerna, un brazo", "x12 por brazo"),
+              ex("Jalón al pecho, agarre cerrado", "x12")
             ]),
             circuit("Circuito 2 · x3", [
-              ex("Jalón al pecho", "x10"),
-              ex("Remo", "x10")
+              ex("Remo en polea baja, codos pegados", "x12"),
+              ex("Jalón al pecho, agarre supino", "x12")
             ]),
             circuit("Circuito 3 · x3", [
-              ex("Polea, agarre 2 cuerdas al pecho", "x10")
+              ex("Jalón al pecho", "x10")
             ])
           ]
         },
@@ -634,15 +652,15 @@
           key: "s3-lunes", day: "Lunes", focus: "Brazo y Hombro", type: "brazo",
           circuits: [
             circuit("Circuito 1 · x3", [
-              ex("Polea arriba, codos pegados, bajar y subir", "x20"),
-              ex("Jalón a la frente con polea, agarre de cuerdas", "x15")
+              ex("Jalón a la frente con polea, agarre de cuerdas", "x15"),
+              ex("Polea arriba, codos pegados, bajar y subir", "x15")
             ]),
             circuit("Circuito 2 · x3", [
-              ex("Cajón, sostenerse de espaldas, bajar y subir", "x20"),
-              ex("Sentada al revés, máquina de abrir y cerrar brazos", "x15")
+              ex("Curl de bíceps con mancuerna", "x12"),
+              ex("Press de hombro con mancuerna", "x10")
             ]),
             circuit("Circuito 3 · x3", [
-              ex("Parada frente a la máquina y levantar", "x15")
+              ex("Cajón, sostenerse de espaldas, bajar y subir", "x15")
             ])
           ]
         },
@@ -690,15 +708,15 @@
           key: "s3-jueves", day: "Jueves", focus: "Torso", type: "torso",
           circuits: [
             circuit("Circuito 1 · x3", [
-              ex("Jalón al pecho", "x12"),
-              ex("Remo", "x12"),
-              ex("Polea, agarre 2 cuerdas al pecho", "x12")
-            ]),
-            circuit("Circuito 2 · x3", [
+              ex("Remo", "x10"),
               ex("Jalón de espalda por encima de la cabeza", "x15")
             ]),
+            circuit("Circuito 2 · x3", [
+              ex("Remo con mancuerna, un brazo", "x12 por brazo"),
+              ex("Remo en polea baja, codos pegados", "x12")
+            ]),
             circuit("Circuito 3 · x3", [
-              ex("Banco, brazos arriba con mancuerna hacia atrás", "x15")
+              ex("Jalón al pecho, agarre supino", "x12")
             ])
           ]
         },
@@ -730,15 +748,15 @@
           key: "s4-lunes", day: "Lunes", focus: "Brazo y Hombro", type: "brazo",
           circuits: [
             circuit("Circuito 1 · x3", [
-              ex("Jalón a la frente con polea, agarre de cuerdas", "x20"),
-              ex("Polea arriba, codos pegados, bajar y subir", "x20")
+              ex("Curl de bíceps con barra", "x12"),
+              ex("Curl martillo con mancuerna", "x12")
             ]),
             circuit("Circuito 2 · x3", [
-              ex("Parada frente a la máquina y levantar", "x15"),
-              ex("Sentada al revés, máquina de abrir y cerrar brazos", "x15")
+              ex("Parada frente a la máquina y levantar", "x10"),
+              ex("Sentada al revés, máquina de abrir y cerrar brazos", "x10")
             ]),
             circuit("Circuito 3 · x3", [
-              ex("Cajón, sostenerse de espaldas, bajar y subir", "x20")
+              ex("Elevación lateral con mancuerna", "x15")
             ])
           ]
         },
@@ -787,15 +805,15 @@
           key: "s4-jueves", day: "Jueves", focus: "Torso", type: "torso",
           circuits: [
             circuit("Circuito 1 · x3", [
-              ex("Jalón al pecho", "x15"),
-              ex("Remo", "x15"),
-              ex("Polea, agarre 2 cuerdas al pecho", "x15")
+              ex("Polea, agarre 2 cuerdas al pecho", "x10"),
+              ex("Banco, brazos arriba con mancuerna hacia atrás", "x15")
             ]),
             circuit("Circuito 2 · x3", [
-              ex("Jalón de espalda por encima de la cabeza", "x20")
+              ex("Jalón al pecho, agarre cerrado", "x12"),
+              ex("Jalón de espalda por encima de la cabeza", "x15")
             ]),
             circuit("Circuito 3 · x3", [
-              ex("Banco, brazos arriba con mancuerna hacia atrás", "x20")
+              ex("Jalón al pecho, agarre supino", "x12")
             ])
           ]
         },
