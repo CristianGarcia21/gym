@@ -97,6 +97,15 @@
   .week-actions{
     display:flex;
     justify-content:flex-end;
+    gap:8px;
+    margin-bottom:12px;
+  }
+  .update-status{
+    font-size:0.8rem;
+    color:var(--muted);
+    background:var(--chip);
+    border-radius:8px;
+    padding:8px 10px;
     margin-bottom:12px;
   }
   .btn-ghost{
@@ -316,12 +325,14 @@
 
 <main>
   <div class="week-actions">
+    <button class="btn-ghost" id="updateBtn">Actualizar app</button>
     <button class="btn-ghost" id="resetWeekBtn">Reiniciar semana</button>
   </div>
+  <div class="update-status" id="updateStatus" hidden></div>
   <div id="daysContainer"></div>
 </main>
 
-<footer>Toca un ejercicio para ver cómo se hace. Marca la casilla al terminarlo; el progreso se guarda en este dispositivo.</footer>
+<footer>Toca un ejercicio para ver cómo se hace. Marca la casilla al terminarlo; el progreso se guarda en este dispositivo.<br>Versión v7</footer>
 <p class="credits">Ilustraciones de ejercicios: Everkinetic y <a href="https://bryllim.com" target="_blank" rel="noopener noreferrer">Bryl Lim</a> (<a href="https://github.com/bryllim/workout-guide" target="_blank" rel="noopener noreferrer">workout-guide</a>), bajo licencia <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>.</p>
 
 <script>
@@ -1088,11 +1099,62 @@
 })();
 </script>
 <script>
+(function(){
+  var hadController = !!(navigator.serviceWorker && navigator.serviceWorker.controller);
+  var reloading = false;
+
   if ("serviceWorker" in navigator){
+    navigator.serviceWorker.addEventListener("controllerchange", function(){
+      if (hadController && !reloading){
+        reloading = true;
+        window.location.reload();
+      }
+    });
     window.addEventListener("load", function(){
-      navigator.serviceWorker.register("service-worker.js").catch(function(){});
+      navigator.serviceWorker.register("service-worker.js", { updateViaCache: "none" })
+        .then(function(reg){ reg.update(); })
+        .catch(function(){});
     });
   }
+
+  var updateBtn = document.getElementById("updateBtn");
+  var statusEl = document.getElementById("updateStatus");
+
+  function say(msg){
+    statusEl.textContent = msg;
+    statusEl.hidden = false;
+  }
+
+  updateBtn.addEventListener("click", function(){
+    updateBtn.disabled = true;
+    say("Buscando la versión más reciente...");
+
+    fetch("service-worker.js?check=" + Date.now(), { cache: "no-store" })
+      .then(function(res){
+        if (!res.ok) throw new Error("bad response");
+        var work = [];
+        if ("serviceWorker" in navigator){
+          work.push(navigator.serviceWorker.getRegistrations().then(function(regs){
+            return Promise.all(regs.map(function(r){ return r.unregister(); }));
+          }));
+        }
+        if (window.caches){
+          work.push(caches.keys().then(function(keys){
+            return Promise.all(keys.map(function(k){ return caches.delete(k); }));
+          }));
+        }
+        return Promise.all(work);
+      })
+      .then(function(){
+        say("Actualizando...");
+        window.location.replace(window.location.pathname + "?u=" + Date.now());
+      })
+      .catch(function(){
+        updateBtn.disabled = false;
+        say("No hay conexión: no se actualizó. Tu versión guardada sigue funcionando sin internet.");
+      });
+  });
+})();
 </script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-var CACHE_NAME = "rutina-luisa-v6";
+var CACHE_NAME = "rutina-luisa-v7";
 var ASSETS = [
   "./",
   "./index.html",
@@ -162,6 +162,27 @@ self.addEventListener("activate", function(event){
 
 self.addEventListener("fetch", function(event){
   if (event.request.method !== "GET") return;
+
+  if (event.request.mode === "navigate"){
+    event.respondWith(
+      Promise.race([
+        fetch(event.request.url, { cache: "no-store" }),
+        new Promise(function(_, reject){ setTimeout(function(){ reject(new Error("timeout")); }, 3000); })
+      ]).then(function(response){
+        if (response && response.ok){
+          var copy = response.clone();
+          caches.open(CACHE_NAME).then(function(cache){ cache.put("./index.html", copy); });
+        }
+        return response;
+      }).catch(function(){
+        return caches.match("./index.html").then(function(cached){
+          return cached || caches.match("./");
+        });
+      })
+    );
+    return;
+  }
+
   event.respondWith(
     caches.match(event.request).then(function(cached){
       var network = fetch(event.request).then(function(response){
