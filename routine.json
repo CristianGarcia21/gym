@@ -7,10 +7,15 @@
         "day": "Lunes",
         "focus": "Brazo y Hombro",
         "type": "brazo",
+        "warmup": "Movilidad de hombros y codos, y 5 min de caminata o bicicleta suave",
         "circuits": [
           {
             "label": "Circuito 1 · x3",
             "exercises": [
+              {
+                "name": "Parada frente a la máquina y levantar",
+                "sets": "x10"
+              },
               {
                 "name": "Curl de bíceps con mancuerna",
                 "sets": "x12"
@@ -25,11 +30,15 @@
             "label": "Circuito 2 · x3",
             "exercises": [
               {
-                "name": "Cajón, sostenerse de espaldas, bajar y subir",
+                "name": "Elevación lateral con mancuerna",
                 "sets": "x15"
               },
               {
-                "name": "Jalón a la frente con polea, agarre de cuerdas",
+                "name": "Curl martillo con mancuerna",
+                "sets": "x12"
+              },
+              {
+                "name": "Cajón, sostenerse de espaldas, bajar y subir",
                 "sets": "x15"
               }
             ]
@@ -38,12 +47,12 @@
             "label": "Circuito 3 · x3",
             "exercises": [
               {
-                "name": "Parada frente a la máquina y levantar",
-                "sets": "x10"
+                "name": "Jalón a la frente con polea, agarre de cuerdas",
+                "sets": "x15"
               },
               {
                 "name": "Sentada al revés, máquina de abrir y cerrar brazos",
-                "sets": "x10"
+                "sets": "x12"
               }
             ]
           }
@@ -54,26 +63,10 @@
         "day": "Martes",
         "focus": "Pierna A",
         "type": "pierna1",
+        "warmup": "5 min de bicicleta o caminata, sentadillas sin peso y movilidad de cadera",
         "circuits": [
           {
             "label": "Circuito 1 · x3",
-            "exercises": [
-              {
-                "name": "Peso muerto",
-                "sets": "x10"
-              },
-              {
-                "name": "Máquina del culito",
-                "sets": "x10"
-              },
-              {
-                "name": "Aductor al revés",
-                "sets": "x20"
-              }
-            ]
-          },
-          {
-            "label": "Circuito 2 · x3",
             "exercises": [
               {
                 "name": "Sentadilla con barra",
@@ -81,11 +74,28 @@
               },
               {
                 "name": "Extensión",
-                "sets": "x10"
+                "sets": "x12"
               },
               {
                 "name": "Aductor de cerrar",
-                "sets": "x20"
+                "sets": "x15"
+              }
+            ]
+          },
+          {
+            "label": "Circuito 2 · x3",
+            "exercises": [
+              {
+                "name": "Prensa (subiendo peso por serie)",
+                "sets": "x12"
+              },
+              {
+                "name": "Zancada con peso",
+                "sets": "x12"
+              },
+              {
+                "name": "Elevación de talones en prensa",
+                "sets": "x15"
               }
             ]
           },
@@ -93,12 +103,12 @@
             "label": "Circuito 3 · x3",
             "exercises": [
               {
-                "name": "Zancada con peso",
-                "sets": "x15"
+                "name": "Hack al revés",
+                "sets": "x12"
               },
               {
-                "name": "Puente",
-                "sets": "x12"
+                "name": "Cajón, subir y bajar",
+                "sets": "x15"
               }
             ]
           }
@@ -124,7 +134,7 @@
               },
               {
                 "name": "Coger balón y lanzar hacia arriba",
-                "sets": ""
+                "sets": "x12"
               }
             ]
           },
@@ -141,7 +151,7 @@
               },
               {
                 "name": "Plancha haciendo skippi",
-                "sets": ""
+                "sets": "30 seg"
               }
             ]
           },
@@ -159,6 +169,10 @@
               {
                 "name": "Acostada, elevaciones",
                 "sets": "1 min"
+              },
+              {
+                "name": "Superman",
+                "sets": "x12"
               }
             ]
           }
@@ -169,6 +183,7 @@
         "day": "Jueves",
         "focus": "Torso",
         "type": "torso",
+        "warmup": "Movilidad de hombros, aperturas de brazos sin peso y 5 min de caminata suave",
         "circuits": [
           {
             "label": "Circuito 1 · x3",
@@ -180,15 +195,6 @@
               {
                 "name": "Jalón al pecho",
                 "sets": "x10"
-              }
-            ]
-          },
-          {
-            "label": "Circuito 2 · x3",
-            "exercises": [
-              {
-                "name": "Banco, brazos arriba con mancuerna hacia atrás",
-                "sets": "x15"
               },
               {
                 "name": "Remo",
@@ -197,15 +203,36 @@
             ]
           },
           {
-            "label": "Circuito 3 · x3",
+            "label": "Circuito 2 · x3",
             "exercises": [
               {
-                "name": "Polea, agarre 2 cuerdas al pecho",
-                "sets": "x10"
+                "name": "Aperturas con mancuerna en banco",
+                "sets": "x12"
               },
               {
                 "name": "Jalón de espalda por encima de la cabeza",
+                "sets": "x12"
+              },
+              {
+                "name": "Polea, agarre 2 cuerdas al pecho",
+                "sets": "x10"
+              }
+            ]
+          },
+          {
+            "label": "Circuito 3 · x3",
+            "exercises": [
+              {
+                "name": "Flexiones inclinadas con las manos en el banco",
+                "sets": "x12"
+              },
+              {
+                "name": "Banco, brazos arriba con mancuerna hacia atrás",
                 "sets": "x15"
+              },
+              {
+                "name": "Remo con mancuerna, un brazo",
+                "sets": "x12 por brazo"
               }
             ]
           }
@@ -216,21 +243,22 @@
         "day": "Viernes",
         "focus": "Pierna B",
         "type": "pierna2",
+        "warmup": "5 min de bicicleta o caminata, sentadillas sin peso y movilidad de cadera",
         "circuits": [
           {
             "label": "Circuito 1 · x3",
             "exercises": [
               {
-                "name": "La que llega al culito",
-                "sets": "2x15"
+                "name": "Peso muerto",
+                "sets": "x10"
               },
               {
-                "name": "Patada",
-                "sets": "10 por pierna"
+                "name": "Máquina del culito",
+                "sets": "x12"
               },
               {
-                "name": "Puente",
-                "sets": "3x10"
+                "name": "Aductor al revés",
+                "sets": "x20"
               }
             ]
           },
@@ -238,12 +266,16 @@
             "label": "Circuito 2 · x3",
             "exercises": [
               {
-                "name": "Hack al revés",
-                "sets": "2x10"
+                "name": "Peso muerto rumano con mancuerna",
+                "sets": "x12"
               },
               {
-                "name": "Zancada con peso",
+                "name": "La que llega al culito",
                 "sets": "x15"
+              },
+              {
+                "name": "Patada",
+                "sets": "10 por pierna"
               }
             ]
           },
@@ -251,12 +283,12 @@
             "label": "Circuito 3 · x3",
             "exercises": [
               {
-                "name": "Cajón, subir y bajar",
-                "sets": "x20"
+                "name": "Puente",
+                "sets": "x15"
               },
               {
-                "name": "Prensa (subiendo peso por serie)",
-                "sets": ""
+                "name": "Acostada boca arriba, mancuerna en la pelvis, levantarse con los dos pies",
+                "sets": "x12"
               }
             ]
           }
@@ -272,12 +304,34 @@
         "day": "Lunes",
         "focus": "Brazo y Hombro",
         "type": "brazo",
+        "warmup": "Movilidad de hombros y codos, y 5 min de caminata o bicicleta suave",
         "circuits": [
           {
             "label": "Circuito 1 · x3",
             "exercises": [
               {
+                "name": "Press de hombro con mancuerna",
+                "sets": "x10"
+              },
+              {
                 "name": "Curl de bíceps con barra",
+                "sets": "x12"
+              },
+              {
+                "name": "Extensión de tríceps con mancuerna sobre la cabeza",
+                "sets": "x12"
+              }
+            ]
+          },
+          {
+            "label": "Circuito 2 · x3",
+            "exercises": [
+              {
+                "name": "Elevación lateral en polea",
+                "sets": "x15"
+              },
+              {
+                "name": "Curl de bíceps en polea baja",
                 "sets": "x12"
               },
               {
@@ -287,28 +341,15 @@
             ]
           },
           {
-            "label": "Circuito 2 · x3",
-            "exercises": [
-              {
-                "name": "Curl de bíceps con mancuerna",
-                "sets": "x12"
-              },
-              {
-                "name": "Elevación lateral con mancuerna",
-                "sets": "x15"
-              }
-            ]
-          },
-          {
             "label": "Circuito 3 · x3",
             "exercises": [
               {
-                "name": "Curl martillo con mancuerna",
-                "sets": "x12"
+                "name": "Jalón a la frente con polea, agarre de cuerdas",
+                "sets": "x15"
               },
               {
-                "name": "Press de hombro con mancuerna",
-                "sets": "x10"
+                "name": "Vuelos posteriores con mancuerna, inclinada",
+                "sets": "x12"
               }
             ]
           }
@@ -319,20 +360,21 @@
         "day": "Martes",
         "focus": "Pierna A",
         "type": "pierna1",
+        "warmup": "5 min de bicicleta o caminata, sentadillas sin peso y movilidad de cadera",
         "circuits": [
           {
             "label": "Circuito 1 · x3",
             "exercises": [
               {
-                "name": "Extensión",
-                "sets": "x10 / x15 / x20"
+                "name": "Sentadilla con mancuerna",
+                "sets": "x15"
               },
               {
-                "name": "Aductor al revés",
-                "sets": "x20 / x20 / x30"
+                "name": "Prensa (subiendo peso por serie)",
+                "sets": "x12"
               },
               {
-                "name": "Hack al revés",
+                "name": "Aductor de cerrar",
                 "sets": "x15"
               }
             ]
@@ -341,25 +383,29 @@
             "label": "Circuito 2 · x3",
             "exercises": [
               {
-                "name": "Avanzadas con peso (incluye sentadilla)",
-                "sets": ""
+                "name": "Hack al revés",
+                "sets": "x12"
               },
               {
-                "name": "Peso muerto",
+                "name": "Extensión",
+                "sets": "x15"
+              },
+              {
+                "name": "Elevación de talones en prensa",
                 "sets": "x15"
               }
             ]
           },
           {
-            "label": "Circuito 3 · x4",
+            "label": "Circuito 3 · x3",
             "exercises": [
               {
-                "name": "Acostada boca arriba, mancuerna en la pelvis, elevación con cada pie",
-                "sets": ""
+                "name": "Avanzadas con peso (incluye sentadilla)",
+                "sets": "x12"
               },
               {
-                "name": "Acostada boca arriba, mancuerna en la pelvis, levantarse con los dos pies",
-                "sets": ""
+                "name": "Cajón, subir y bajar",
+                "sets": "x15"
               }
             ]
           }
@@ -370,6 +416,7 @@
         "day": "Miércoles",
         "focus": "Abs y Cardio",
         "type": "abs",
+        "warmup": "Trote suave y movilidad articular",
         "circuits": [
           {
             "label": "Circuito 1 · x3",
@@ -383,8 +430,8 @@
                 "sets": "x15"
               },
               {
-                "name": "Bicicleta",
-                "sets": "x15"
+                "name": "Burpies",
+                "sets": "x10"
               }
             ]
           },
@@ -392,30 +439,21 @@
             "label": "Circuito 2 · x3",
             "exercises": [
               {
-                "name": "Gusanito boca abajo",
-                "sets": ""
-              },
-              {
-                "name": "Plancha",
-                "sets": ""
-              }
-            ]
-          },
-          {
-            "label": "Circuito 3 · x2",
-            "exercises": [
-              {
                 "name": "Trotar hasta el hospital",
                 "sets": ""
               },
               {
-                "name": "Burpies",
+                "name": "Gusanito boca abajo",
                 "sets": "x10"
+              },
+              {
+                "name": "Plancha",
+                "sets": "40 seg"
               }
             ]
           },
           {
-            "label": "Circuito 4 · x5",
+            "label": "Circuito 3 · x3",
             "exercises": [
               {
                 "name": "Abdominales",
@@ -428,6 +466,10 @@
               {
                 "name": "Tijeras",
                 "sets": "x10"
+              },
+              {
+                "name": "Bicicleta",
+                "sets": "x15"
               }
             ]
           }
@@ -438,6 +480,7 @@
         "day": "Jueves",
         "focus": "Torso",
         "type": "torso",
+        "warmup": "Movilidad de hombros, aperturas de brazos sin peso y 5 min de caminata suave",
         "circuits": [
           {
             "label": "Circuito 1 · x3",
@@ -447,17 +490,8 @@
                 "sets": "x12"
               },
               {
-                "name": "Remo con mancuerna, un brazo",
-                "sets": "x12 por brazo"
-              }
-            ]
-          },
-          {
-            "label": "Circuito 2 · x3",
-            "exercises": [
-              {
-                "name": "Jalón al pecho",
-                "sets": "x10"
+                "name": "Jalón al pecho, agarre cerrado",
+                "sets": "x12"
               },
               {
                 "name": "Remo en polea baja, codos pegados",
@@ -466,14 +500,31 @@
             ]
           },
           {
-            "label": "Circuito 3 · x3",
+            "label": "Circuito 2 · x3",
             "exercises": [
               {
-                "name": "Jalón al pecho, agarre cerrado",
+                "name": "Press inclinado con mancuerna",
                 "sets": "x12"
               },
               {
+                "name": "Remo con mancuerna, un brazo",
+                "sets": "x12 por brazo"
+              },
+              {
                 "name": "Jalón al pecho, agarre supino",
+                "sets": "x12"
+              }
+            ]
+          },
+          {
+            "label": "Circuito 3 · x3",
+            "exercises": [
+              {
+                "name": "Aperturas en polea (cruce de poleas)",
+                "sets": "x12"
+              },
+              {
+                "name": "Jalón con brazos rectos en polea",
                 "sets": "x12"
               }
             ]
@@ -485,17 +536,22 @@
         "day": "Viernes",
         "focus": "Pierna B",
         "type": "pierna2",
+        "warmup": "5 min de bicicleta o caminata, sentadillas sin peso y movilidad de cadera",
         "circuits": [
           {
             "label": "Circuito 1 · x3",
             "exercises": [
               {
-                "name": "Sentadilla con mancuerna",
-                "sets": "x20"
+                "name": "Peso muerto rumano con barra",
+                "sets": "x12"
               },
               {
-                "name": "Prensa (subiendo peso por serie)",
-                "sets": ""
+                "name": "Máquina del culito",
+                "sets": "x12"
+              },
+              {
+                "name": "Aductor al revés",
+                "sets": "x20"
               }
             ]
           },
@@ -503,12 +559,16 @@
             "label": "Circuito 2 · x3",
             "exercises": [
               {
-                "name": "Zancada con peso",
-                "sets": ""
+                "name": "Avanzadas con peso (incluye sentadilla)",
+                "sets": "x12"
               },
               {
-                "name": "Aductor de cerrar",
+                "name": "La que llega al culito",
                 "sets": "x15"
+              },
+              {
+                "name": "Patada hacia atrás",
+                "sets": "10 por pierna"
               }
             ]
           },
@@ -516,16 +576,12 @@
             "label": "Circuito 3 · x3",
             "exercises": [
               {
-                "name": "Extensión",
+                "name": "Puente",
                 "sets": "x15"
               },
               {
-                "name": "Patada hacia atrás",
-                "sets": "10 por pierna"
-              },
-              {
-                "name": "Hack al revés",
-                "sets": "x15"
+                "name": "Acostada boca arriba, mancuerna en la pelvis, elevación con cada pie",
+                "sets": "x12"
               }
             ]
           }
@@ -541,17 +597,22 @@
         "day": "Lunes",
         "focus": "Brazo y Hombro",
         "type": "brazo",
+        "warmup": "Movilidad de hombros y codos, y 5 min de caminata o bicicleta suave",
         "circuits": [
           {
             "label": "Circuito 1 · x3",
             "exercises": [
               {
+                "name": "Parada frente a la máquina y levantar",
+                "sets": "x10"
+              },
+              {
                 "name": "Curl de bíceps con mancuerna",
                 "sets": "x12"
               },
               {
-                "name": "Polea arriba, codos pegados, bajar y subir",
-                "sets": "x15"
+                "name": "Patada de tríceps con mancuerna",
+                "sets": "x12"
               }
             ]
           },
@@ -559,11 +620,15 @@
             "label": "Circuito 2 · x3",
             "exercises": [
               {
-                "name": "Press de hombro con mancuerna",
-                "sets": "x10"
+                "name": "Elevación lateral en polea",
+                "sets": "x15"
               },
               {
-                "name": "Jalón a la frente con polea, agarre de cuerdas",
+                "name": "Curl de bíceps con barra",
+                "sets": "x12"
+              },
+              {
+                "name": "Cajón, sostenerse de espaldas, bajar y subir",
                 "sets": "x15"
               }
             ]
@@ -572,12 +637,12 @@
             "label": "Circuito 3 · x3",
             "exercises": [
               {
-                "name": "Elevación lateral con mancuerna",
-                "sets": "x15"
+                "name": "Sentada al revés, máquina de abrir y cerrar brazos",
+                "sets": "x12"
               },
               {
-                "name": "Cajón, sostenerse de espaldas, bajar y subir",
-                "sets": "x15"
+                "name": "Vuelos posteriores con mancuerna, inclinada",
+                "sets": "x12"
               }
             ]
           }
@@ -588,6 +653,7 @@
         "day": "Martes",
         "focus": "Pierna A",
         "type": "pierna1",
+        "warmup": "5 min de bicicleta o caminata, sentadillas sin peso y movilidad de cadera",
         "circuits": [
           {
             "label": "Circuito 1 · x3",
@@ -597,24 +663,7 @@
                 "sets": "x12"
               },
               {
-                "name": "Prensa (subiendo peso por serie)",
-                "sets": ""
-              },
-              {
-                "name": "Extensión",
-                "sets": "x15"
-              }
-            ]
-          },
-          {
-            "label": "Circuito 2 · x3",
-            "exercises": [
-              {
-                "name": "Peso muerto",
-                "sets": "x12"
-              },
-              {
-                "name": "Máquina del culito",
+                "name": "Hack al revés",
                 "sets": "x12"
               },
               {
@@ -624,15 +673,32 @@
             ]
           },
           {
-            "label": "Circuito 3 · x3",
+            "label": "Circuito 2 · x3",
             "exercises": [
               {
-                "name": "Hack al revés",
+                "name": "Avanzadas con peso (incluye sentadilla)",
+                "sets": "x12"
+              },
+              {
+                "name": "Extensión",
                 "sets": "x15"
               },
               {
-                "name": "Aductor al revés",
-                "sets": "x20"
+                "name": "Elevación de talones en prensa",
+                "sets": "x15"
+              }
+            ]
+          },
+          {
+            "label": "Circuito 3 · x3",
+            "exercises": [
+              {
+                "name": "Prensa (subiendo peso por serie)",
+                "sets": "x15"
+              },
+              {
+                "name": "Sentadilla sumo con mancuerna",
+                "sets": "x12"
               }
             ]
           }
@@ -658,7 +724,7 @@
               },
               {
                 "name": "Coger balón y lanzar hacia arriba",
-                "sets": ""
+                "sets": "x12"
               }
             ]
           },
@@ -676,6 +742,10 @@
               {
                 "name": "Bicicleta",
                 "sets": "x15"
+              },
+              {
+                "name": "Plancha lateral",
+                "sets": "30 seg por lado"
               }
             ]
           },
@@ -703,17 +773,22 @@
         "day": "Jueves",
         "focus": "Torso",
         "type": "torso",
+        "warmup": "Movilidad de hombros, aperturas de brazos sin peso y 5 min de caminata suave",
         "circuits": [
           {
             "label": "Circuito 1 · x3",
             "exercises": [
               {
-                "name": "Aperturas con mancuerna en banco",
-                "sets": "x12"
+                "name": "Press de banca con barra",
+                "sets": "x10"
               },
               {
                 "name": "Remo",
                 "sets": "x10"
+              },
+              {
+                "name": "Jalón al pecho, agarre supino",
+                "sets": "x12"
               }
             ]
           },
@@ -721,12 +796,16 @@
             "label": "Circuito 2 · x3",
             "exercises": [
               {
+                "name": "Aperturas en polea (cruce de poleas)",
+                "sets": "x12"
+              },
+              {
                 "name": "Jalón de espalda por encima de la cabeza",
                 "sets": "x15"
               },
               {
-                "name": "Remo con mancuerna, un brazo",
-                "sets": "x12 por brazo"
+                "name": "Polea, agarre 2 cuerdas al pecho",
+                "sets": "x10"
               }
             ]
           },
@@ -734,12 +813,12 @@
             "label": "Circuito 3 · x3",
             "exercises": [
               {
-                "name": "Jalón al pecho, agarre supino",
+                "name": "Flexiones inclinadas con las manos en el banco",
                 "sets": "x12"
               },
               {
-                "name": "Remo en polea baja, codos pegados",
-                "sets": "x12"
+                "name": "Banco, brazos arriba con mancuerna hacia atrás",
+                "sets": "x15"
               }
             ]
           }
@@ -750,20 +829,21 @@
         "day": "Viernes",
         "focus": "Pierna B",
         "type": "pierna2",
+        "warmup": "5 min de bicicleta o caminata, sentadillas sin peso y movilidad de cadera",
         "circuits": [
           {
             "label": "Circuito 1 · x3",
             "exercises": [
               {
-                "name": "Sentadilla con mancuerna",
-                "sets": "x15"
+                "name": "Peso muerto",
+                "sets": "x12"
               },
               {
-                "name": "Zancada con peso",
-                "sets": "x15"
+                "name": "Sentadilla sumo con mancuerna",
+                "sets": "x12"
               },
               {
-                "name": "Cajón, subir y bajar",
+                "name": "Aductor al revés",
                 "sets": "x20"
               }
             ]
@@ -772,16 +852,16 @@
             "label": "Circuito 2 · x3",
             "exercises": [
               {
-                "name": "Puente",
+                "name": "Zancada con peso",
                 "sets": "x12"
+              },
+              {
+                "name": "Máquina del culito",
+                "sets": "x15"
               },
               {
                 "name": "Patada",
                 "sets": "12 por pierna"
-              },
-              {
-                "name": "La que llega al culito",
-                "sets": "x15"
               }
             ]
           },
@@ -789,12 +869,12 @@
             "label": "Circuito 3 · x3",
             "exercises": [
               {
-                "name": "Avanzadas con peso (incluye sentadilla)",
+                "name": "Puente",
                 "sets": "x15"
               },
               {
-                "name": "Trotar hasta el hospital",
-                "sets": ""
+                "name": "Elevación de talones en prensa",
+                "sets": "x15"
               }
             ]
           }
@@ -810,17 +890,22 @@
         "day": "Lunes",
         "focus": "Brazo y Hombro",
         "type": "brazo",
+        "warmup": "Movilidad de hombros y codos, y 5 min de caminata o bicicleta suave",
         "circuits": [
           {
             "label": "Circuito 1 · x3",
             "exercises": [
               {
-                "name": "Curl de bíceps con barra",
+                "name": "Press de hombro con mancuerna",
+                "sets": "x10"
+              },
+              {
+                "name": "Curl martillo con mancuerna",
                 "sets": "x12"
               },
               {
-                "name": "Polea arriba, codos pegados, bajar y subir",
-                "sets": "x15"
+                "name": "Extensión de tríceps con mancuerna sobre la cabeza",
+                "sets": "x12"
               }
             ]
           },
@@ -828,11 +913,15 @@
             "label": "Circuito 2 · x3",
             "exercises": [
               {
-                "name": "Curl martillo con mancuerna",
+                "name": "Elevación lateral con mancuerna",
+                "sets": "x15"
+              },
+              {
+                "name": "Curl de bíceps en polea baja",
                 "sets": "x12"
               },
               {
-                "name": "Elevación lateral con mancuerna",
+                "name": "Cajón, sostenerse de espaldas, bajar y subir",
                 "sets": "x15"
               }
             ]
@@ -841,12 +930,12 @@
             "label": "Circuito 3 · x3",
             "exercises": [
               {
-                "name": "Parada frente a la máquina y levantar",
-                "sets": "x10"
+                "name": "Sentada al revés, máquina de abrir y cerrar brazos",
+                "sets": "x12"
               },
               {
-                "name": "Sentada al revés, máquina de abrir y cerrar brazos",
-                "sets": "x10"
+                "name": "Jalón a la frente con polea, agarre de cuerdas",
+                "sets": "x15"
               }
             ]
           }
@@ -857,21 +946,22 @@
         "day": "Martes",
         "focus": "Pierna A",
         "type": "pierna1",
+        "warmup": "5 min de bicicleta o caminata, sentadillas sin peso y movilidad de cadera",
         "circuits": [
           {
             "label": "Circuito 1 · x3",
             "exercises": [
               {
-                "name": "Peso muerto",
-                "sets": "x15"
-              },
-              {
-                "name": "Sentadilla con barra",
+                "name": "Sentadilla con mancuerna",
                 "sets": "x15"
               },
               {
                 "name": "Prensa (subiendo peso por serie)",
-                "sets": ""
+                "sets": "x12"
+              },
+              {
+                "name": "Extensión",
+                "sets": "x20"
               }
             ]
           },
@@ -879,16 +969,16 @@
             "label": "Circuito 2 · x3",
             "exercises": [
               {
-                "name": "Máquina del culito",
+                "name": "Hack al revés",
                 "sets": "x15"
               },
               {
-                "name": "Extensión",
-                "sets": "x20"
+                "name": "Zancada con peso",
+                "sets": "x12"
               },
               {
-                "name": "Aductor de cerrar",
-                "sets": "x20"
+                "name": "Sentadilla sumo con mancuerna",
+                "sets": "x12"
               }
             ]
           },
@@ -896,12 +986,12 @@
             "label": "Circuito 3 · x3",
             "exercises": [
               {
-                "name": "Hack al revés",
+                "name": "Cajón, subir y bajar",
                 "sets": "x20"
               },
               {
-                "name": "Aductor al revés",
-                "sets": "x30"
+                "name": "Elevación de talones en prensa",
+                "sets": "x20"
               }
             ]
           }
@@ -976,17 +1066,22 @@
         "day": "Jueves",
         "focus": "Torso",
         "type": "torso",
+        "warmup": "Movilidad de hombros, aperturas de brazos sin peso y 5 min de caminata suave",
         "circuits": [
           {
             "label": "Circuito 1 · x3",
             "exercises": [
               {
-                "name": "Press de pecho con mancuerna",
-                "sets": "x15"
+                "name": "Press inclinado con mancuerna",
+                "sets": "x12"
               },
               {
-                "name": "Polea, agarre 2 cuerdas al pecho",
+                "name": "Jalón al pecho",
                 "sets": "x10"
+              },
+              {
+                "name": "Remo con mancuerna, un brazo",
+                "sets": "x12 por brazo"
               }
             ]
           },
@@ -994,11 +1089,15 @@
             "label": "Circuito 2 · x3",
             "exercises": [
               {
-                "name": "Banco, brazos arriba con mancuerna hacia atrás",
-                "sets": "x15"
+                "name": "Press de pecho con mancuerna",
+                "sets": "x12"
               },
               {
                 "name": "Jalón al pecho, agarre cerrado",
+                "sets": "x12"
+              },
+              {
+                "name": "Remo en polea baja, codos pegados",
                 "sets": "x12"
               }
             ]
@@ -1007,12 +1106,16 @@
             "label": "Circuito 3 · x3",
             "exercises": [
               {
-                "name": "Jalón al pecho, agarre supino",
+                "name": "Aperturas con mancuerna en banco",
                 "sets": "x12"
               },
               {
-                "name": "Jalón de espalda por encima de la cabeza",
-                "sets": "x15"
+                "name": "Jalón con brazos rectos en polea",
+                "sets": "x12"
+              },
+              {
+                "name": "Remo",
+                "sets": "x10"
               }
             ]
           }
@@ -1023,21 +1126,22 @@
         "day": "Viernes",
         "focus": "Pierna B",
         "type": "pierna2",
+        "warmup": "5 min de bicicleta o caminata, sentadillas sin peso y movilidad de cadera",
         "circuits": [
           {
             "label": "Circuito 1 · x3",
             "exercises": [
               {
-                "name": "Sentadilla con mancuerna",
-                "sets": "x20"
+                "name": "Peso muerto rumano con mancuerna",
+                "sets": "x15"
               },
               {
-                "name": "Zancada con peso",
-                "sets": "x20"
+                "name": "La que llega al culito",
+                "sets": "x15"
               },
               {
-                "name": "Prensa (subiendo peso por serie)",
-                "sets": ""
+                "name": "Aductor al revés",
+                "sets": "x25"
               }
             ]
           },
@@ -1045,16 +1149,16 @@
             "label": "Circuito 2 · x3",
             "exercises": [
               {
-                "name": "Puente",
+                "name": "Avanzadas con peso (incluye sentadilla)",
+                "sets": "x12"
+              },
+              {
+                "name": "Máquina del culito",
                 "sets": "x15"
               },
               {
-                "name": "Patada",
-                "sets": "15 por pierna"
-              },
-              {
-                "name": "La que llega al culito",
-                "sets": "x20"
+                "name": "Elevación de talones en prensa",
+                "sets": "x15"
               }
             ]
           },
@@ -1062,11 +1166,11 @@
             "label": "Circuito 3 · x3",
             "exercises": [
               {
-                "name": "Cajón, subir y bajar",
-                "sets": "x20"
+                "name": "Acostada boca arriba, mancuerna en la pelvis, elevación con cada pie",
+                "sets": "x12"
               },
               {
-                "name": "Avanzadas con peso (incluye sentadilla)",
+                "name": "Puente",
                 "sets": "x20"
               }
             ]

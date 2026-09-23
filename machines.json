@@ -20,14 +20,16 @@
       "nombre": "Banco plano / ajustable",
       "categoria": "peso libre",
       "evidencia": "Implícito en los ejercicios con mancuerna acostada (\"Banco, brazos arriba con mancuerna hacia atrás\").",
-      "usadoEnRutinaActual": true
+      "usadoEnRutinaActual": true,
+      "notaUso": "Se asume que el banco es ajustable: el press inclinado con mancuerna lo necesita. Si es solo plano, cambiar ese ejercicio por press de pecho con mancuerna."
     },
     {
       "id": "prensa",
       "nombre": "Prensa de piernas (leg press)",
       "categoria": "máquina selectorizada",
       "evidencia": "\"Prensa subiendo peso por serie\" en tus notas originales.",
-      "usadoEnRutinaActual": true
+      "usadoEnRutinaActual": true,
+      "notaUso": "Se usa también para elevación de talones (pantorrillas) apoyando solo las puntas en la plataforma."
     },
     {
       "id": "hack",
@@ -62,7 +64,8 @@
       "nombre": "Estación de poleas / cable (con agarres: cuerda, barra recta, barra cerrada)",
       "categoria": "cable",
       "evidencia": "\"Jalón a la frente con polea\", \"Polea, agarre 2 cuerdas al pecho\", \"Polea arriba, codos pegados\" en tus notas originales. Las variantes de agarre (cerrado, supino) las agregué asumiendo que la misma estación de poleas las permite.",
-      "usadoEnRutinaActual": true
+      "usadoEnRutinaActual": true,
+      "notaUso": "Se asume que admite altura baja, media y alta con agarres de cuerda y barra: curl en polea, elevación lateral en polea, aperturas en polea y jalón con brazos rectos."
     },
     {
       "id": "remo-sentado",
