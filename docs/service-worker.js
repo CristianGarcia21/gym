@@ -1,4 +1,4 @@
-var CACHE_NAME = "rutina-luisa-v5";
+var CACHE_NAME = "rutina-luisa-v6";
 var ASSETS = [
   "./",
   "./index.html",

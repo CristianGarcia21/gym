@@ -12,16 +12,12 @@
             "label": "Circuito 1 · x3",
             "exercises": [
               {
+                "name": "Curl de bíceps con mancuerna",
+                "sets": "x12"
+              },
+              {
                 "name": "Polea arriba, codos pegados, bajar y subir",
                 "sets": "x15"
-              },
-              {
-                "name": "Cajón, sostenerse de espaldas, bajar y subir",
-                "sets": "x15"
-              },
-              {
-                "name": "Parada frente a la máquina y levantar",
-                "sets": "x10"
               }
             ]
           },
@@ -29,8 +25,21 @@
             "label": "Circuito 2 · x3",
             "exercises": [
               {
+                "name": "Cajón, sostenerse de espaldas, bajar y subir",
+                "sets": "x15"
+              },
+              {
                 "name": "Jalón a la frente con polea, agarre de cuerdas",
                 "sets": "x15"
+              }
+            ]
+          },
+          {
+            "label": "Circuito 3 · x3",
+            "exercises": [
+              {
+                "name": "Parada frente a la máquina y levantar",
+                "sets": "x10"
               },
               {
                 "name": "Sentada al revés, máquina de abrir y cerrar brazos",
@@ -165,21 +174,30 @@
             "label": "Circuito 1 · x3",
             "exercises": [
               {
+                "name": "Press de banca con barra",
+                "sets": "x10"
+              },
+              {
                 "name": "Jalón al pecho",
                 "sets": "x10"
-              },
-              {
-                "name": "Remo",
-                "sets": "x10"
-              },
-              {
-                "name": "Banco, brazos arriba con mancuerna hacia atrás",
-                "sets": "x15"
               }
             ]
           },
           {
             "label": "Circuito 2 · x3",
+            "exercises": [
+              {
+                "name": "Banco, brazos arriba con mancuerna hacia atrás",
+                "sets": "x15"
+              },
+              {
+                "name": "Remo",
+                "sets": "x10"
+              }
+            ]
+          },
+          {
+            "label": "Circuito 3 · x3",
             "exercises": [
               {
                 "name": "Polea, agarre 2 cuerdas al pecho",
@@ -188,10 +206,6 @@
               {
                 "name": "Jalón de espalda por encima de la cabeza",
                 "sets": "x15"
-              },
-              {
-                "name": "Press de banca con barra",
-                "sets": "x10"
               }
             ]
           }
@@ -267,6 +281,15 @@
                 "sets": "x12"
               },
               {
+                "name": "Polea arriba, codos pegados, bajar y subir",
+                "sets": "x15"
+              }
+            ]
+          },
+          {
+            "label": "Circuito 2 · x3",
+            "exercises": [
+              {
                 "name": "Curl de bíceps con mancuerna",
                 "sets": "x12"
               },
@@ -277,7 +300,7 @@
             ]
           },
           {
-            "label": "Circuito 2 · x3",
+            "label": "Circuito 3 · x3",
             "exercises": [
               {
                 "name": "Curl martillo con mancuerna",
@@ -420,16 +443,12 @@
             "label": "Circuito 1 · x3",
             "exercises": [
               {
-                "name": "Remo con mancuerna, un brazo",
-                "sets": "x12 por brazo"
-              },
-              {
-                "name": "Jalón al pecho, agarre cerrado",
+                "name": "Press de pecho con mancuerna",
                 "sets": "x12"
               },
               {
-                "name": "Jalón al pecho",
-                "sets": "x10"
+                "name": "Remo con mancuerna, un brazo",
+                "sets": "x12 por brazo"
               }
             ]
           },
@@ -437,15 +456,24 @@
             "label": "Circuito 2 · x3",
             "exercises": [
               {
+                "name": "Jalón al pecho",
+                "sets": "x10"
+              },
+              {
                 "name": "Remo en polea baja, codos pegados",
+                "sets": "x12"
+              }
+            ]
+          },
+          {
+            "label": "Circuito 3 · x3",
+            "exercises": [
+              {
+                "name": "Jalón al pecho, agarre cerrado",
                 "sets": "x12"
               },
               {
                 "name": "Jalón al pecho, agarre supino",
-                "sets": "x12"
-              },
-              {
-                "name": "Press de pecho con mancuerna",
                 "sets": "x12"
               }
             ]
@@ -518,15 +546,11 @@
             "label": "Circuito 1 · x3",
             "exercises": [
               {
-                "name": "Jalón a la frente con polea, agarre de cuerdas",
-                "sets": "x15"
+                "name": "Curl de bíceps con mancuerna",
+                "sets": "x12"
               },
               {
                 "name": "Polea arriba, codos pegados, bajar y subir",
-                "sets": "x15"
-              },
-              {
-                "name": "Cajón, sostenerse de espaldas, bajar y subir",
                 "sets": "x15"
               }
             ]
@@ -535,12 +559,25 @@
             "label": "Circuito 2 · x3",
             "exercises": [
               {
-                "name": "Curl de bíceps con mancuerna",
-                "sets": "x12"
-              },
-              {
                 "name": "Press de hombro con mancuerna",
                 "sets": "x10"
+              },
+              {
+                "name": "Jalón a la frente con polea, agarre de cuerdas",
+                "sets": "x15"
+              }
+            ]
+          },
+          {
+            "label": "Circuito 3 · x3",
+            "exercises": [
+              {
+                "name": "Elevación lateral con mancuerna",
+                "sets": "x15"
+              },
+              {
+                "name": "Cajón, sostenerse de espaldas, bajar y subir",
+                "sets": "x15"
               }
             ]
           }
@@ -671,16 +708,12 @@
             "label": "Circuito 1 · x3",
             "exercises": [
               {
+                "name": "Aperturas con mancuerna en banco",
+                "sets": "x12"
+              },
+              {
                 "name": "Remo",
                 "sets": "x10"
-              },
-              {
-                "name": "Jalón de espalda por encima de la cabeza",
-                "sets": "x15"
-              },
-              {
-                "name": "Jalón al pecho, agarre supino",
-                "sets": "x12"
               }
             ]
           },
@@ -688,15 +721,24 @@
             "label": "Circuito 2 · x3",
             "exercises": [
               {
-                "name": "Remo con mancuerna, un brazo",
-                "sets": "x12 por brazo"
+                "name": "Jalón de espalda por encima de la cabeza",
+                "sets": "x15"
               },
               {
-                "name": "Remo en polea baja, codos pegados",
+                "name": "Remo con mancuerna, un brazo",
+                "sets": "x12 por brazo"
+              }
+            ]
+          },
+          {
+            "label": "Circuito 3 · x3",
+            "exercises": [
+              {
+                "name": "Jalón al pecho, agarre supino",
                 "sets": "x12"
               },
               {
-                "name": "Aperturas con mancuerna en banco",
+                "name": "Remo en polea baja, codos pegados",
                 "sets": "x12"
               }
             ]
@@ -777,6 +819,15 @@
                 "sets": "x12"
               },
               {
+                "name": "Polea arriba, codos pegados, bajar y subir",
+                "sets": "x15"
+              }
+            ]
+          },
+          {
+            "label": "Circuito 2 · x3",
+            "exercises": [
+              {
                 "name": "Curl martillo con mancuerna",
                 "sets": "x12"
               },
@@ -787,7 +838,7 @@
             ]
           },
           {
-            "label": "Circuito 2 · x3",
+            "label": "Circuito 3 · x3",
             "exercises": [
               {
                 "name": "Parada frente a la máquina y levantar",
@@ -930,16 +981,12 @@
             "label": "Circuito 1 · x3",
             "exercises": [
               {
-                "name": "Polea, agarre 2 cuerdas al pecho",
-                "sets": "x10"
-              },
-              {
-                "name": "Banco, brazos arriba con mancuerna hacia atrás",
+                "name": "Press de pecho con mancuerna",
                 "sets": "x15"
               },
               {
-                "name": "Jalón al pecho, agarre supino",
-                "sets": "x12"
+                "name": "Polea, agarre 2 cuerdas al pecho",
+                "sets": "x10"
               }
             ]
           },
@@ -947,15 +994,24 @@
             "label": "Circuito 2 · x3",
             "exercises": [
               {
+                "name": "Banco, brazos arriba con mancuerna hacia atrás",
+                "sets": "x15"
+              },
+              {
                 "name": "Jalón al pecho, agarre cerrado",
+                "sets": "x12"
+              }
+            ]
+          },
+          {
+            "label": "Circuito 3 · x3",
+            "exercises": [
+              {
+                "name": "Jalón al pecho, agarre supino",
                 "sets": "x12"
               },
               {
                 "name": "Jalón de espalda por encima de la cabeza",
-                "sets": "x15"
-              },
-              {
-                "name": "Press de pecho con mancuerna",
                 "sets": "x15"
               }
             ]
