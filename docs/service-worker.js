@@ -1,4 +1,4 @@
-var CACHE_NAME = "rutina-luisa-v4";
+var CACHE_NAME = "rutina-luisa-v5";
 var ASSETS = [
   "./",
   "./index.html",
@@ -9,6 +9,9 @@ var ASSETS = [
   "./assets/bench-dip-1.svg",
   "./assets/bench-dip-2.svg",
   "./assets/bench-dip-3.svg",
+  "./assets/bench-press-1.svg",
+  "./assets/bench-press-2.svg",
+  "./assets/bench-press-3.svg",
   "./assets/bicep-curl-1.svg",
   "./assets/bicep-curl-2.svg",
   "./assets/bicep-curl-3.svg",
@@ -30,6 +33,12 @@ var ASSETS = [
   "./assets/donkey-kick-1.svg",
   "./assets/donkey-kick-2.svg",
   "./assets/donkey-kick-3.svg",
+  "./assets/dumbbell-bench-press-1.svg",
+  "./assets/dumbbell-bench-press-2.svg",
+  "./assets/dumbbell-bench-press-3.svg",
+  "./assets/dumbbell-fly-1.svg",
+  "./assets/dumbbell-fly-2.svg",
+  "./assets/dumbbell-fly-3.svg",
   "./assets/dumbbell-hip-thrust-1.svg",
   "./assets/dumbbell-hip-thrust-2.svg",
   "./assets/dumbbell-hip-thrust-3.svg",

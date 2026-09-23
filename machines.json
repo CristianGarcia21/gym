@@ -1,0 +1,125 @@
+{
+  "nota": "Inventario de máquinas/equipo que infiero que tiene el gimnasio, basado en las rutinas originales que enviaste. 'evidencia' cita o resume la parte de tus notas que confirma cada equipo; 'usadoEnRutinaActual' indica si sigue apareciendo en la app hoy.",
+  "equipo": [
+    {
+      "id": "barra",
+      "nombre": "Barra olímpica / barra libre",
+      "categoria": "peso libre",
+      "evidencia": "\"Sentadilla con barra\", \"Peso muerto\" en tus notas originales.",
+      "usadoEnRutinaActual": true
+    },
+    {
+      "id": "mancuernas",
+      "nombre": "Mancuernas (varios pesos)",
+      "categoria": "peso libre",
+      "evidencia": "\"Banco, brazos arriba mancuerna hacia atrás\", \"Sentadilla con mancuerna\", \"mancuerna en la pelvis\" en tus notas originales.",
+      "usadoEnRutinaActual": true
+    },
+    {
+      "id": "banco",
+      "nombre": "Banco plano / ajustable",
+      "categoria": "peso libre",
+      "evidencia": "Implícito en los ejercicios con mancuerna acostada (\"Banco, brazos arriba con mancuerna hacia atrás\").",
+      "usadoEnRutinaActual": true
+    },
+    {
+      "id": "prensa",
+      "nombre": "Prensa de piernas (leg press)",
+      "categoria": "máquina selectorizada",
+      "evidencia": "\"Prensa subiendo peso por serie\" en tus notas originales.",
+      "usadoEnRutinaActual": true
+    },
+    {
+      "id": "hack",
+      "nombre": "Máquina hack (hack squat)",
+      "categoria": "máquina selectorizada",
+      "evidencia": "\"Hacka al revés\" / \"Hack al revés\" en tus notas originales.",
+      "usadoEnRutinaActual": true
+    },
+    {
+      "id": "extension-cuadriceps",
+      "nombre": "Máquina de extensión de cuádriceps",
+      "categoria": "máquina selectorizada",
+      "evidencia": "\"Extensión\" en tus notas originales (aparece varias veces con distintas repeticiones).",
+      "usadoEnRutinaActual": true
+    },
+    {
+      "id": "aductor-abductor",
+      "nombre": "Máquina de aductor / abductor",
+      "categoria": "máquina selectorizada",
+      "evidencia": "\"Aductor de cerrar\", \"Aductor al revés\" en tus notas originales.",
+      "usadoEnRutinaActual": true
+    },
+    {
+      "id": "gluteo",
+      "nombre": "Máquina de glúteo (kickback / empuje de cadera)",
+      "categoria": "máquina selectorizada",
+      "evidencia": "\"La que llega al culito\", \"Máquina del culito\" en tus notas originales.",
+      "usadoEnRutinaActual": true
+    },
+    {
+      "id": "polea",
+      "nombre": "Estación de poleas / cable (con agarres: cuerda, barra recta, barra cerrada)",
+      "categoria": "cable",
+      "evidencia": "\"Jalón a la frente con polea\", \"Polea, agarre 2 cuerdas al pecho\", \"Polea arriba, codos pegados\" en tus notas originales. Las variantes de agarre (cerrado, supino) las agregué asumiendo que la misma estación de poleas las permite.",
+      "usadoEnRutinaActual": true
+    },
+    {
+      "id": "remo-sentado",
+      "nombre": "Máquina o polea de remo sentado",
+      "categoria": "cable / máquina selectorizada",
+      "evidencia": "\"Remo\" en tus notas originales.",
+      "usadoEnRutinaActual": true
+    },
+    {
+      "id": "press-hombro-maquina",
+      "nombre": "Máquina de press de hombro",
+      "categoria": "máquina selectorizada",
+      "evidencia": "\"Parada frente a la máquina y levantar\" en tus notas originales.",
+      "usadoEnRutinaActual": true
+    },
+    {
+      "id": "pec-deck-reverso",
+      "nombre": "Máquina pec-deck reversa (abrir/cerrar brazos, deltoide posterior)",
+      "categoria": "máquina selectorizada",
+      "evidencia": "\"Sentada al revés, máquina de abrir y cerrar brazos\" en tus notas originales.",
+      "usadoEnRutinaActual": true
+    },
+    {
+      "id": "cajon",
+      "nombre": "Cajón / banco de step (plyo box)",
+      "categoria": "accesorio",
+      "evidencia": "\"Cajón pequeño subir y bajar\", \"Cajón, sostenerse de espaldas, bajar y subir\" en tus notas originales.",
+      "usadoEnRutinaActual": true
+    },
+    {
+      "id": "balon-medicinal",
+      "nombre": "Balón medicinal",
+      "categoria": "accesorio",
+      "evidencia": "\"Coger balón, lanzar hacia arriba\", \"Tirar balón\" en tus notas originales.",
+      "usadoEnRutinaActual": true
+    },
+    {
+      "id": "lazo",
+      "nombre": "Cuerda para saltar (lazo)",
+      "categoria": "accesorio",
+      "evidencia": "\"Calentamiento con lazo\", \"Saltar lazo x50\" en tus notas originales.",
+      "usadoEnRutinaActual": false,
+      "notaUso": "Existe en el gimnasio según tus notas, pero se quitó de la rutina actual porque pediste eliminar los ejercicios de salto."
+    },
+    {
+      "id": "colchoneta",
+      "nombre": "Colchoneta / espacio de piso",
+      "categoria": "accesorio",
+      "evidencia": "Implícito en todos los ejercicios de suelo (plancha, abdominales, tijeras, bicicleta, puente, gusanito).",
+      "usadoEnRutinaActual": true
+    },
+    {
+      "id": "area-cardio",
+      "nombre": "Espacio abierto para trotar (no es máquina)",
+      "categoria": "espacio",
+      "evidencia": "\"Vuelta del gimnasio al hospital\", \"Trote al hospital\" en tus notas originales — parece ser un trayecto real afuera del gimnasio, no una caminadora.",
+      "usadoEnRutinaActual": true
+    }
+  ]
+}

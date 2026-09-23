@@ -1,0 +1,1022 @@
+[
+  {
+    "name": "Semana 1",
+    "days": [
+      {
+        "key": "s1-lunes",
+        "day": "Lunes",
+        "focus": "Brazo y Hombro",
+        "type": "brazo",
+        "circuits": [
+          {
+            "label": "Circuito 1 · x3",
+            "exercises": [
+              {
+                "name": "Polea arriba, codos pegados, bajar y subir",
+                "sets": "x15"
+              },
+              {
+                "name": "Cajón, sostenerse de espaldas, bajar y subir",
+                "sets": "x15"
+              },
+              {
+                "name": "Parada frente a la máquina y levantar",
+                "sets": "x10"
+              }
+            ]
+          },
+          {
+            "label": "Circuito 2 · x3",
+            "exercises": [
+              {
+                "name": "Jalón a la frente con polea, agarre de cuerdas",
+                "sets": "x15"
+              },
+              {
+                "name": "Sentada al revés, máquina de abrir y cerrar brazos",
+                "sets": "x10"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "s1-martes",
+        "day": "Martes",
+        "focus": "Pierna A",
+        "type": "pierna1",
+        "circuits": [
+          {
+            "label": "Circuito 1 · x3",
+            "exercises": [
+              {
+                "name": "Peso muerto",
+                "sets": "x10"
+              },
+              {
+                "name": "Máquina del culito",
+                "sets": "x10"
+              },
+              {
+                "name": "Aductor al revés",
+                "sets": "x20"
+              }
+            ]
+          },
+          {
+            "label": "Circuito 2 · x3",
+            "exercises": [
+              {
+                "name": "Sentadilla con barra",
+                "sets": "x10"
+              },
+              {
+                "name": "Extensión",
+                "sets": "x10"
+              },
+              {
+                "name": "Aductor de cerrar",
+                "sets": "x20"
+              }
+            ]
+          },
+          {
+            "label": "Circuito 3 · x3",
+            "exercises": [
+              {
+                "name": "Zancada con peso",
+                "sets": "x15"
+              },
+              {
+                "name": "Puente",
+                "sets": "x12"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "s1-miercoles",
+        "day": "Miércoles",
+        "focus": "Abs y Cardio",
+        "type": "abs",
+        "warmup": "Trote suave y movilidad articular",
+        "circuits": [
+          {
+            "label": "Circuito 1 · x3",
+            "exercises": [
+              {
+                "name": "Burpies",
+                "sets": "x10"
+              },
+              {
+                "name": "Mariposas",
+                "sets": "x40"
+              },
+              {
+                "name": "Coger balón y lanzar hacia arriba",
+                "sets": ""
+              }
+            ]
+          },
+          {
+            "label": "Circuito 2 · x3",
+            "exercises": [
+              {
+                "name": "Plancha tocando hombro",
+                "sets": "x10"
+              },
+              {
+                "name": "Vuelta al gimnasio (trote)",
+                "sets": ""
+              },
+              {
+                "name": "Plancha haciendo skippi",
+                "sets": ""
+              }
+            ]
+          },
+          {
+            "label": "Circuito 3 · x4",
+            "exercises": [
+              {
+                "name": "Acostada, caminado",
+                "sets": "1 min"
+              },
+              {
+                "name": "Acostada, tijera",
+                "sets": "1 min"
+              },
+              {
+                "name": "Acostada, elevaciones",
+                "sets": "1 min"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "s1-jueves",
+        "day": "Jueves",
+        "focus": "Torso",
+        "type": "torso",
+        "circuits": [
+          {
+            "label": "Circuito 1 · x3",
+            "exercises": [
+              {
+                "name": "Jalón al pecho",
+                "sets": "x10"
+              },
+              {
+                "name": "Remo",
+                "sets": "x10"
+              },
+              {
+                "name": "Banco, brazos arriba con mancuerna hacia atrás",
+                "sets": "x15"
+              }
+            ]
+          },
+          {
+            "label": "Circuito 2 · x3",
+            "exercises": [
+              {
+                "name": "Polea, agarre 2 cuerdas al pecho",
+                "sets": "x10"
+              },
+              {
+                "name": "Jalón de espalda por encima de la cabeza",
+                "sets": "x15"
+              },
+              {
+                "name": "Press de banca con barra",
+                "sets": "x10"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "s1-viernes",
+        "day": "Viernes",
+        "focus": "Pierna B",
+        "type": "pierna2",
+        "circuits": [
+          {
+            "label": "Circuito 1 · x3",
+            "exercises": [
+              {
+                "name": "La que llega al culito",
+                "sets": "2x15"
+              },
+              {
+                "name": "Patada",
+                "sets": "10 por pierna"
+              },
+              {
+                "name": "Puente",
+                "sets": "3x10"
+              }
+            ]
+          },
+          {
+            "label": "Circuito 2 · x3",
+            "exercises": [
+              {
+                "name": "Hack al revés",
+                "sets": "2x10"
+              },
+              {
+                "name": "Zancada con peso",
+                "sets": "x15"
+              }
+            ]
+          },
+          {
+            "label": "Circuito 3 · x3",
+            "exercises": [
+              {
+                "name": "Cajón, subir y bajar",
+                "sets": "x20"
+              },
+              {
+                "name": "Prensa (subiendo peso por serie)",
+                "sets": ""
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Semana 2",
+    "days": [
+      {
+        "key": "s2-lunes",
+        "day": "Lunes",
+        "focus": "Brazo y Hombro",
+        "type": "brazo",
+        "circuits": [
+          {
+            "label": "Circuito 1 · x3",
+            "exercises": [
+              {
+                "name": "Curl de bíceps con barra",
+                "sets": "x12"
+              },
+              {
+                "name": "Curl de bíceps con mancuerna",
+                "sets": "x12"
+              },
+              {
+                "name": "Elevación lateral con mancuerna",
+                "sets": "x15"
+              }
+            ]
+          },
+          {
+            "label": "Circuito 2 · x3",
+            "exercises": [
+              {
+                "name": "Curl martillo con mancuerna",
+                "sets": "x12"
+              },
+              {
+                "name": "Press de hombro con mancuerna",
+                "sets": "x10"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "s2-martes",
+        "day": "Martes",
+        "focus": "Pierna A",
+        "type": "pierna1",
+        "circuits": [
+          {
+            "label": "Circuito 1 · x3",
+            "exercises": [
+              {
+                "name": "Extensión",
+                "sets": "x10 / x15 / x20"
+              },
+              {
+                "name": "Aductor al revés",
+                "sets": "x20 / x20 / x30"
+              },
+              {
+                "name": "Hack al revés",
+                "sets": "x15"
+              }
+            ]
+          },
+          {
+            "label": "Circuito 2 · x3",
+            "exercises": [
+              {
+                "name": "Avanzadas con peso (incluye sentadilla)",
+                "sets": ""
+              },
+              {
+                "name": "Peso muerto",
+                "sets": "x15"
+              }
+            ]
+          },
+          {
+            "label": "Circuito 3 · x4",
+            "exercises": [
+              {
+                "name": "Acostada boca arriba, mancuerna en la pelvis, elevación con cada pie",
+                "sets": ""
+              },
+              {
+                "name": "Acostada boca arriba, mancuerna en la pelvis, levantarse con los dos pies",
+                "sets": ""
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "s2-miercoles",
+        "day": "Miércoles",
+        "focus": "Abs y Cardio",
+        "type": "abs",
+        "circuits": [
+          {
+            "label": "Circuito 1 · x3",
+            "exercises": [
+              {
+                "name": "Cajón, subir y bajar",
+                "sets": "x20"
+              },
+              {
+                "name": "Tirar balón",
+                "sets": "x15"
+              },
+              {
+                "name": "Bicicleta",
+                "sets": "x15"
+              }
+            ]
+          },
+          {
+            "label": "Circuito 2 · x3",
+            "exercises": [
+              {
+                "name": "Gusanito boca abajo",
+                "sets": ""
+              },
+              {
+                "name": "Plancha",
+                "sets": ""
+              }
+            ]
+          },
+          {
+            "label": "Circuito 3 · x2",
+            "exercises": [
+              {
+                "name": "Trotar hasta el hospital",
+                "sets": ""
+              },
+              {
+                "name": "Burpies",
+                "sets": "x10"
+              }
+            ]
+          },
+          {
+            "label": "Circuito 4 · x5",
+            "exercises": [
+              {
+                "name": "Abdominales",
+                "sets": "x10"
+              },
+              {
+                "name": "Elevaciones",
+                "sets": "x10"
+              },
+              {
+                "name": "Tijeras",
+                "sets": "x10"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "s2-jueves",
+        "day": "Jueves",
+        "focus": "Torso",
+        "type": "torso",
+        "circuits": [
+          {
+            "label": "Circuito 1 · x3",
+            "exercises": [
+              {
+                "name": "Remo con mancuerna, un brazo",
+                "sets": "x12 por brazo"
+              },
+              {
+                "name": "Jalón al pecho, agarre cerrado",
+                "sets": "x12"
+              },
+              {
+                "name": "Jalón al pecho",
+                "sets": "x10"
+              }
+            ]
+          },
+          {
+            "label": "Circuito 2 · x3",
+            "exercises": [
+              {
+                "name": "Remo en polea baja, codos pegados",
+                "sets": "x12"
+              },
+              {
+                "name": "Jalón al pecho, agarre supino",
+                "sets": "x12"
+              },
+              {
+                "name": "Press de pecho con mancuerna",
+                "sets": "x12"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "s2-viernes",
+        "day": "Viernes",
+        "focus": "Pierna B",
+        "type": "pierna2",
+        "circuits": [
+          {
+            "label": "Circuito 1 · x3",
+            "exercises": [
+              {
+                "name": "Sentadilla con mancuerna",
+                "sets": "x20"
+              },
+              {
+                "name": "Prensa (subiendo peso por serie)",
+                "sets": ""
+              }
+            ]
+          },
+          {
+            "label": "Circuito 2 · x3",
+            "exercises": [
+              {
+                "name": "Zancada con peso",
+                "sets": ""
+              },
+              {
+                "name": "Aductor de cerrar",
+                "sets": "x15"
+              }
+            ]
+          },
+          {
+            "label": "Circuito 3 · x3",
+            "exercises": [
+              {
+                "name": "Extensión",
+                "sets": "x15"
+              },
+              {
+                "name": "Patada hacia atrás",
+                "sets": "10 por pierna"
+              },
+              {
+                "name": "Hack al revés",
+                "sets": "x15"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Semana 3",
+    "days": [
+      {
+        "key": "s3-lunes",
+        "day": "Lunes",
+        "focus": "Brazo y Hombro",
+        "type": "brazo",
+        "circuits": [
+          {
+            "label": "Circuito 1 · x3",
+            "exercises": [
+              {
+                "name": "Jalón a la frente con polea, agarre de cuerdas",
+                "sets": "x15"
+              },
+              {
+                "name": "Polea arriba, codos pegados, bajar y subir",
+                "sets": "x15"
+              },
+              {
+                "name": "Cajón, sostenerse de espaldas, bajar y subir",
+                "sets": "x15"
+              }
+            ]
+          },
+          {
+            "label": "Circuito 2 · x3",
+            "exercises": [
+              {
+                "name": "Curl de bíceps con mancuerna",
+                "sets": "x12"
+              },
+              {
+                "name": "Press de hombro con mancuerna",
+                "sets": "x10"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "s3-martes",
+        "day": "Martes",
+        "focus": "Pierna A",
+        "type": "pierna1",
+        "circuits": [
+          {
+            "label": "Circuito 1 · x3",
+            "exercises": [
+              {
+                "name": "Sentadilla con barra",
+                "sets": "x12"
+              },
+              {
+                "name": "Prensa (subiendo peso por serie)",
+                "sets": ""
+              },
+              {
+                "name": "Extensión",
+                "sets": "x15"
+              }
+            ]
+          },
+          {
+            "label": "Circuito 2 · x3",
+            "exercises": [
+              {
+                "name": "Peso muerto",
+                "sets": "x12"
+              },
+              {
+                "name": "Máquina del culito",
+                "sets": "x12"
+              },
+              {
+                "name": "Aductor de cerrar",
+                "sets": "x20"
+              }
+            ]
+          },
+          {
+            "label": "Circuito 3 · x3",
+            "exercises": [
+              {
+                "name": "Hack al revés",
+                "sets": "x15"
+              },
+              {
+                "name": "Aductor al revés",
+                "sets": "x20"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "s3-miercoles",
+        "day": "Miércoles",
+        "focus": "Abs y Cardio",
+        "type": "abs",
+        "warmup": "Trote suave y movilidad articular",
+        "circuits": [
+          {
+            "label": "Circuito 1 · x3",
+            "exercises": [
+              {
+                "name": "Burpies",
+                "sets": "x12"
+              },
+              {
+                "name": "Mariposas",
+                "sets": "x40"
+              },
+              {
+                "name": "Coger balón y lanzar hacia arriba",
+                "sets": ""
+              }
+            ]
+          },
+          {
+            "label": "Circuito 2 · x4",
+            "exercises": [
+              {
+                "name": "Plancha",
+                "sets": "40 seg"
+              },
+              {
+                "name": "Gusanito boca abajo",
+                "sets": "x10"
+              },
+              {
+                "name": "Bicicleta",
+                "sets": "x15"
+              }
+            ]
+          },
+          {
+            "label": "Circuito 3 · x3",
+            "exercises": [
+              {
+                "name": "Tijeras",
+                "sets": "x15"
+              },
+              {
+                "name": "Elevaciones",
+                "sets": "x15"
+              },
+              {
+                "name": "Abdominales",
+                "sets": "x15"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "s3-jueves",
+        "day": "Jueves",
+        "focus": "Torso",
+        "type": "torso",
+        "circuits": [
+          {
+            "label": "Circuito 1 · x3",
+            "exercises": [
+              {
+                "name": "Remo",
+                "sets": "x10"
+              },
+              {
+                "name": "Jalón de espalda por encima de la cabeza",
+                "sets": "x15"
+              },
+              {
+                "name": "Jalón al pecho, agarre supino",
+                "sets": "x12"
+              }
+            ]
+          },
+          {
+            "label": "Circuito 2 · x3",
+            "exercises": [
+              {
+                "name": "Remo con mancuerna, un brazo",
+                "sets": "x12 por brazo"
+              },
+              {
+                "name": "Remo en polea baja, codos pegados",
+                "sets": "x12"
+              },
+              {
+                "name": "Aperturas con mancuerna en banco",
+                "sets": "x12"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "s3-viernes",
+        "day": "Viernes",
+        "focus": "Pierna B",
+        "type": "pierna2",
+        "circuits": [
+          {
+            "label": "Circuito 1 · x3",
+            "exercises": [
+              {
+                "name": "Sentadilla con mancuerna",
+                "sets": "x15"
+              },
+              {
+                "name": "Zancada con peso",
+                "sets": "x15"
+              },
+              {
+                "name": "Cajón, subir y bajar",
+                "sets": "x20"
+              }
+            ]
+          },
+          {
+            "label": "Circuito 2 · x3",
+            "exercises": [
+              {
+                "name": "Puente",
+                "sets": "x12"
+              },
+              {
+                "name": "Patada",
+                "sets": "12 por pierna"
+              },
+              {
+                "name": "La que llega al culito",
+                "sets": "x15"
+              }
+            ]
+          },
+          {
+            "label": "Circuito 3 · x3",
+            "exercises": [
+              {
+                "name": "Avanzadas con peso (incluye sentadilla)",
+                "sets": "x15"
+              },
+              {
+                "name": "Trotar hasta el hospital",
+                "sets": ""
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Semana 4",
+    "days": [
+      {
+        "key": "s4-lunes",
+        "day": "Lunes",
+        "focus": "Brazo y Hombro",
+        "type": "brazo",
+        "circuits": [
+          {
+            "label": "Circuito 1 · x3",
+            "exercises": [
+              {
+                "name": "Curl de bíceps con barra",
+                "sets": "x12"
+              },
+              {
+                "name": "Curl martillo con mancuerna",
+                "sets": "x12"
+              },
+              {
+                "name": "Elevación lateral con mancuerna",
+                "sets": "x15"
+              }
+            ]
+          },
+          {
+            "label": "Circuito 2 · x3",
+            "exercises": [
+              {
+                "name": "Parada frente a la máquina y levantar",
+                "sets": "x10"
+              },
+              {
+                "name": "Sentada al revés, máquina de abrir y cerrar brazos",
+                "sets": "x10"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "s4-martes",
+        "day": "Martes",
+        "focus": "Pierna A",
+        "type": "pierna1",
+        "circuits": [
+          {
+            "label": "Circuito 1 · x3",
+            "exercises": [
+              {
+                "name": "Peso muerto",
+                "sets": "x15"
+              },
+              {
+                "name": "Sentadilla con barra",
+                "sets": "x15"
+              },
+              {
+                "name": "Prensa (subiendo peso por serie)",
+                "sets": ""
+              }
+            ]
+          },
+          {
+            "label": "Circuito 2 · x3",
+            "exercises": [
+              {
+                "name": "Máquina del culito",
+                "sets": "x15"
+              },
+              {
+                "name": "Extensión",
+                "sets": "x20"
+              },
+              {
+                "name": "Aductor de cerrar",
+                "sets": "x20"
+              }
+            ]
+          },
+          {
+            "label": "Circuito 3 · x3",
+            "exercises": [
+              {
+                "name": "Hack al revés",
+                "sets": "x20"
+              },
+              {
+                "name": "Aductor al revés",
+                "sets": "x30"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "s4-miercoles",
+        "day": "Miércoles",
+        "focus": "Abs y Cardio",
+        "type": "abs",
+        "warmup": "Trote suave y movilidad articular",
+        "circuits": [
+          {
+            "label": "Circuito 1 · x4",
+            "exercises": [
+              {
+                "name": "Burpies",
+                "sets": "x15"
+              },
+              {
+                "name": "Mariposas",
+                "sets": "x40"
+              },
+              {
+                "name": "Tirar balón",
+                "sets": "x15"
+              }
+            ]
+          },
+          {
+            "label": "Circuito 2 · x3",
+            "exercises": [
+              {
+                "name": "Plancha tocando hombro",
+                "sets": "x15"
+              },
+              {
+                "name": "Plancha haciendo skippi",
+                "sets": "x15"
+              },
+              {
+                "name": "Trotar hasta el hospital",
+                "sets": ""
+              }
+            ]
+          },
+          {
+            "label": "Circuito 3 · x4",
+            "exercises": [
+              {
+                "name": "Acostada, tijera",
+                "sets": "1 min"
+              },
+              {
+                "name": "Acostada, elevaciones",
+                "sets": "1 min"
+              },
+              {
+                "name": "Bicicleta",
+                "sets": "x20"
+              },
+              {
+                "name": "Abdominales",
+                "sets": "x20"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "s4-jueves",
+        "day": "Jueves",
+        "focus": "Torso",
+        "type": "torso",
+        "circuits": [
+          {
+            "label": "Circuito 1 · x3",
+            "exercises": [
+              {
+                "name": "Polea, agarre 2 cuerdas al pecho",
+                "sets": "x10"
+              },
+              {
+                "name": "Banco, brazos arriba con mancuerna hacia atrás",
+                "sets": "x15"
+              },
+              {
+                "name": "Jalón al pecho, agarre supino",
+                "sets": "x12"
+              }
+            ]
+          },
+          {
+            "label": "Circuito 2 · x3",
+            "exercises": [
+              {
+                "name": "Jalón al pecho, agarre cerrado",
+                "sets": "x12"
+              },
+              {
+                "name": "Jalón de espalda por encima de la cabeza",
+                "sets": "x15"
+              },
+              {
+                "name": "Press de pecho con mancuerna",
+                "sets": "x15"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "s4-viernes",
+        "day": "Viernes",
+        "focus": "Pierna B",
+        "type": "pierna2",
+        "circuits": [
+          {
+            "label": "Circuito 1 · x3",
+            "exercises": [
+              {
+                "name": "Sentadilla con mancuerna",
+                "sets": "x20"
+              },
+              {
+                "name": "Zancada con peso",
+                "sets": "x20"
+              },
+              {
+                "name": "Prensa (subiendo peso por serie)",
+                "sets": ""
+              }
+            ]
+          },
+          {
+            "label": "Circuito 2 · x3",
+            "exercises": [
+              {
+                "name": "Puente",
+                "sets": "x15"
+              },
+              {
+                "name": "Patada",
+                "sets": "15 por pierna"
+              },
+              {
+                "name": "La que llega al culito",
+                "sets": "x20"
+              }
+            ]
+          },
+          {
+            "label": "Circuito 3 · x3",
+            "exercises": [
+              {
+                "name": "Cajón, subir y bajar",
+                "sets": "x20"
+              },
+              {
+                "name": "Avanzadas con peso (incluye sentadilla)",
+                "sets": "x20"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
