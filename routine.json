@@ -17,11 +17,11 @@
                 "sets": "x10"
               },
               {
-                "name": "Curl de bíceps con mancuerna",
+                "name": "Sentada al revés, máquina de abrir y cerrar brazos",
                 "sets": "x12"
               },
               {
-                "name": "Polea arriba, codos pegados, bajar y subir",
+                "name": "Elevación lateral en polea",
                 "sets": "x15"
               }
             ]
@@ -30,16 +30,16 @@
             "label": "Circuito 2 · x3",
             "exercises": [
               {
-                "name": "Elevación lateral con mancuerna",
+                "name": "Jalón a la frente con polea, agarre de cuerdas",
                 "sets": "x15"
               },
               {
-                "name": "Curl martillo con mancuerna",
+                "name": "Polea arriba, codos pegados, bajar y subir",
+                "sets": "x15"
+              },
+              {
+                "name": "Curl de bíceps en polea baja",
                 "sets": "x12"
-              },
-              {
-                "name": "Cajón, sostenerse de espaldas, bajar y subir",
-                "sets": "x15"
               }
             ]
           },
@@ -47,11 +47,11 @@
             "label": "Circuito 3 · x3",
             "exercises": [
               {
-                "name": "Jalón a la frente con polea, agarre de cuerdas",
-                "sets": "x15"
+                "name": "Cajón, sostenerse de espaldas, bajar y subir",
+                "sets": "x12"
               },
               {
-                "name": "Sentada al revés, máquina de abrir y cerrar brazos",
+                "name": "Curl de bíceps con barra",
                 "sets": "x12"
               }
             ]
@@ -73,12 +73,12 @@
                 "sets": "x10"
               },
               {
-                "name": "Extensión",
+                "name": "Prensa (subiendo peso por serie)",
                 "sets": "x12"
               },
               {
-                "name": "Aductor de cerrar",
-                "sets": "x15"
+                "name": "Extensión",
+                "sets": "x12"
               }
             ]
           },
@@ -86,16 +86,16 @@
             "label": "Circuito 2 · x3",
             "exercises": [
               {
-                "name": "Prensa (subiendo peso por serie)",
-                "sets": "x12"
-              },
-              {
                 "name": "Zancada con peso",
                 "sets": "x12"
               },
               {
-                "name": "Elevación de talones en prensa",
+                "name": "Aductor de cerrar",
                 "sets": "x15"
+              },
+              {
+                "name": "Avanzadas con peso (incluye sentadilla)",
+                "sets": "x12"
               }
             ]
           },
@@ -107,7 +107,7 @@
                 "sets": "x12"
               },
               {
-                "name": "Cajón, subir y bajar",
+                "name": "Elevación de talones en prensa",
                 "sets": "x15"
               }
             ]
@@ -189,7 +189,7 @@
             "label": "Circuito 1 · x3",
             "exercises": [
               {
-                "name": "Press de banca con barra",
+                "name": "Press de pecho en máquina",
                 "sets": "x10"
               },
               {
@@ -206,7 +206,7 @@
             "label": "Circuito 2 · x3",
             "exercises": [
               {
-                "name": "Aperturas con mancuerna en banco",
+                "name": "Aperturas en polea (cruce de poleas)",
                 "sets": "x12"
               },
               {
@@ -214,8 +214,8 @@
                 "sets": "x12"
               },
               {
-                "name": "Polea, agarre 2 cuerdas al pecho",
-                "sets": "x10"
+                "name": "Remo en polea baja, codos pegados",
+                "sets": "x12"
               }
             ]
           },
@@ -223,16 +223,12 @@
             "label": "Circuito 3 · x3",
             "exercises": [
               {
-                "name": "Flexiones inclinadas con las manos en el banco",
+                "name": "Jalón con brazos rectos en polea",
                 "sets": "x12"
               },
               {
                 "name": "Banco, brazos arriba con mancuerna hacia atrás",
                 "sets": "x15"
-              },
-              {
-                "name": "Remo con mancuerna, un brazo",
-                "sets": "x12 por brazo"
               }
             ]
           }
@@ -266,16 +262,16 @@
             "label": "Circuito 2 · x3",
             "exercises": [
               {
-                "name": "Peso muerto rumano con mancuerna",
-                "sets": "x12"
-              },
-              {
                 "name": "La que llega al culito",
-                "sets": "x15"
+                "sets": "x12"
               },
               {
                 "name": "Patada",
                 "sets": "10 por pierna"
+              },
+              {
+                "name": "Puente",
+                "sets": "x15"
               }
             ]
           },
@@ -283,11 +279,11 @@
             "label": "Circuito 3 · x3",
             "exercises": [
               {
-                "name": "Puente",
+                "name": "Pantorrilla de pie (burro)",
                 "sets": "x15"
               },
               {
-                "name": "Acostada boca arriba, mancuerna en la pelvis, levantarse con los dos pies",
+                "name": "Zancada con peso",
                 "sets": "x12"
               }
             ]
@@ -310,11 +306,28 @@
             "label": "Circuito 1 · x3",
             "exercises": [
               {
-                "name": "Press de hombro con mancuerna",
+                "name": "Press Arnold con mancuerna",
                 "sets": "x10"
               },
               {
-                "name": "Curl de bíceps con barra",
+                "name": "Elevación lateral con mancuerna",
+                "sets": "x15"
+              },
+              {
+                "name": "Vuelos posteriores con mancuerna, inclinada",
+                "sets": "x15"
+              }
+            ]
+          },
+          {
+            "label": "Circuito 2 · x3",
+            "exercises": [
+              {
+                "name": "Curl de bíceps con mancuerna",
+                "sets": "x12"
+              },
+              {
+                "name": "Curl martillo con mancuerna",
                 "sets": "x12"
               },
               {
@@ -324,31 +337,14 @@
             ]
           },
           {
-            "label": "Circuito 2 · x3",
-            "exercises": [
-              {
-                "name": "Elevación lateral en polea",
-                "sets": "x15"
-              },
-              {
-                "name": "Curl de bíceps en polea baja",
-                "sets": "x12"
-              },
-              {
-                "name": "Polea arriba, codos pegados, bajar y subir",
-                "sets": "x15"
-              }
-            ]
-          },
-          {
             "label": "Circuito 3 · x3",
             "exercises": [
               {
-                "name": "Jalón a la frente con polea, agarre de cuerdas",
-                "sets": "x15"
+                "name": "Patada de tríceps con mancuerna",
+                "sets": "x12"
               },
               {
-                "name": "Vuelos posteriores con mancuerna, inclinada",
+                "name": "Press de hombro con mancuerna sentado",
                 "sets": "x12"
               }
             ]
@@ -366,15 +362,15 @@
             "label": "Circuito 1 · x3",
             "exercises": [
               {
-                "name": "Sentadilla con mancuerna",
-                "sets": "x15"
-              },
-              {
-                "name": "Prensa (subiendo peso por serie)",
+                "name": "Hack al revés",
                 "sets": "x12"
               },
               {
-                "name": "Aductor de cerrar",
+                "name": "Sentadilla sumo con mancuerna",
+                "sets": "x15"
+              },
+              {
+                "name": "Cajón, subir y bajar",
                 "sets": "x15"
               }
             ]
@@ -383,11 +379,11 @@
             "label": "Circuito 2 · x3",
             "exercises": [
               {
-                "name": "Hack al revés",
-                "sets": "x12"
+                "name": "Extensión",
+                "sets": "x15"
               },
               {
-                "name": "Extensión",
+                "name": "Sentadilla con mancuerna",
                 "sets": "x15"
               },
               {
@@ -400,11 +396,11 @@
             "label": "Circuito 3 · x3",
             "exercises": [
               {
-                "name": "Avanzadas con peso (incluye sentadilla)",
-                "sets": "x12"
+                "name": "Aductor de cerrar",
+                "sets": "x15"
               },
               {
-                "name": "Cajón, subir y bajar",
+                "name": "Prensa (subiendo peso por serie)",
                 "sets": "x15"
               }
             ]
@@ -439,8 +435,8 @@
             "label": "Circuito 2 · x3",
             "exercises": [
               {
-                "name": "Trotar hasta el hospital",
-                "sets": ""
+                "name": "Elíptica",
+                "sets": "8 min"
               },
               {
                 "name": "Gusanito boca abajo",
@@ -486,15 +482,15 @@
             "label": "Circuito 1 · x3",
             "exercises": [
               {
-                "name": "Press de pecho con mancuerna",
-                "sets": "x12"
+                "name": "Press de banca con barra",
+                "sets": "x10"
               },
               {
-                "name": "Jalón al pecho, agarre cerrado",
-                "sets": "x12"
+                "name": "Remo con barra inclinado",
+                "sets": "x10"
               },
               {
-                "name": "Remo en polea baja, codos pegados",
+                "name": "Press inclinado con mancuerna",
                 "sets": "x12"
               }
             ]
@@ -503,15 +499,15 @@
             "label": "Circuito 2 · x3",
             "exercises": [
               {
-                "name": "Press inclinado con mancuerna",
-                "sets": "x12"
-              },
-              {
                 "name": "Remo con mancuerna, un brazo",
                 "sets": "x12 por brazo"
               },
               {
-                "name": "Jalón al pecho, agarre supino",
+                "name": "Jalón al pecho, agarre cerrado",
+                "sets": "x12"
+              },
+              {
+                "name": "Aperturas con mancuerna en banco",
                 "sets": "x12"
               }
             ]
@@ -520,11 +516,11 @@
             "label": "Circuito 3 · x3",
             "exercises": [
               {
-                "name": "Aperturas en polea (cruce de poleas)",
+                "name": "Flexiones inclinadas con las manos en el banco",
                 "sets": "x12"
               },
               {
-                "name": "Jalón con brazos rectos en polea",
+                "name": "Jalón al pecho, agarre supino",
                 "sets": "x12"
               }
             ]
@@ -542,11 +538,11 @@
             "label": "Circuito 1 · x3",
             "exercises": [
               {
-                "name": "Peso muerto rumano con barra",
+                "name": "Peso muerto rumano con mancuerna",
                 "sets": "x12"
               },
               {
-                "name": "Máquina del culito",
+                "name": "Puente con barra (hip thrust)",
                 "sets": "x12"
               },
               {
@@ -559,16 +555,16 @@
             "label": "Circuito 2 · x3",
             "exercises": [
               {
-                "name": "Avanzadas con peso (incluye sentadilla)",
-                "sets": "x12"
-              },
-              {
                 "name": "La que llega al culito",
                 "sets": "x15"
               },
               {
-                "name": "Patada hacia atrás",
-                "sets": "10 por pierna"
+                "name": "Puente a una pierna",
+                "sets": "12 por pierna"
+              },
+              {
+                "name": "Patada de glúteo en polea baja",
+                "sets": "x12"
               }
             ]
           },
@@ -576,12 +572,12 @@
             "label": "Circuito 3 · x3",
             "exercises": [
               {
-                "name": "Puente",
+                "name": "Pantorrilla de pie (burro)",
                 "sets": "x15"
               },
               {
-                "name": "Acostada boca arriba, mancuerna en la pelvis, elevación con cada pie",
-                "sets": "x12"
+                "name": "Zancada con peso",
+                "sets": "x15"
               }
             ]
           }
@@ -603,15 +599,15 @@
             "label": "Circuito 1 · x3",
             "exercises": [
               {
-                "name": "Parada frente a la máquina y levantar",
+                "name": "Press de hombro en Smith",
                 "sets": "x10"
               },
               {
-                "name": "Curl de bíceps con mancuerna",
-                "sets": "x12"
+                "name": "Elevación lateral en polea",
+                "sets": "x15"
               },
               {
-                "name": "Patada de tríceps con mancuerna",
+                "name": "Curl de bíceps en polea baja",
                 "sets": "x12"
               }
             ]
@@ -620,16 +616,16 @@
             "label": "Circuito 2 · x3",
             "exercises": [
               {
-                "name": "Elevación lateral en polea",
+                "name": "Extensión de tríceps en polea, cuerda",
+                "sets": "x12"
+              },
+              {
+                "name": "Jalón a la frente con polea, agarre de cuerdas",
                 "sets": "x15"
               },
               {
                 "name": "Curl de bíceps con barra",
                 "sets": "x12"
-              },
-              {
-                "name": "Cajón, sostenerse de espaldas, bajar y subir",
-                "sets": "x15"
               }
             ]
           },
@@ -637,12 +633,12 @@
             "label": "Circuito 3 · x3",
             "exercises": [
               {
-                "name": "Sentada al revés, máquina de abrir y cerrar brazos",
+                "name": "Cajón, sostenerse de espaldas, bajar y subir",
                 "sets": "x12"
               },
               {
-                "name": "Vuelos posteriores con mancuerna, inclinada",
-                "sets": "x12"
+                "name": "Polea arriba, codos pegados, bajar y subir",
+                "sets": "x15"
               }
             ]
           }
@@ -659,16 +655,16 @@
             "label": "Circuito 1 · x3",
             "exercises": [
               {
-                "name": "Sentadilla con barra",
-                "sets": "x12"
+                "name": "Sentadilla en Smith",
+                "sets": "x10"
               },
               {
-                "name": "Hack al revés",
-                "sets": "x12"
+                "name": "Zancada reversa en Smith",
+                "sets": "x12 por pierna"
               },
               {
-                "name": "Aductor de cerrar",
-                "sets": "x20"
+                "name": "Extensión",
+                "sets": "x15"
               }
             ]
           },
@@ -676,16 +672,16 @@
             "label": "Circuito 2 · x3",
             "exercises": [
               {
-                "name": "Avanzadas con peso (incluye sentadilla)",
-                "sets": "x12"
+                "name": "Prensa (subiendo peso por serie)",
+                "sets": "x15"
               },
               {
-                "name": "Extensión",
-                "sets": "x15"
+                "name": "Aductor de cerrar",
+                "sets": "x20"
               },
               {
                 "name": "Elevación de talones en prensa",
-                "sets": "x15"
+                "sets": "x20"
               }
             ]
           },
@@ -693,12 +689,12 @@
             "label": "Circuito 3 · x3",
             "exercises": [
               {
-                "name": "Prensa (subiendo peso por serie)",
+                "name": "Sentadilla con mancuerna",
                 "sets": "x15"
               },
               {
-                "name": "Sentadilla sumo con mancuerna",
-                "sets": "x12"
+                "name": "Hack al revés",
+                "sets": "x15"
               }
             ]
           }
@@ -779,15 +775,15 @@
             "label": "Circuito 1 · x3",
             "exercises": [
               {
-                "name": "Press de banca con barra",
+                "name": "Press de banca en Smith",
                 "sets": "x10"
               },
               {
-                "name": "Remo",
+                "name": "Remo en polea baja, codos pegados",
                 "sets": "x10"
               },
               {
-                "name": "Jalón al pecho, agarre supino",
+                "name": "Jalón al pecho",
                 "sets": "x12"
               }
             ]
@@ -796,16 +792,16 @@
             "label": "Circuito 2 · x3",
             "exercises": [
               {
-                "name": "Aperturas en polea (cruce de poleas)",
+                "name": "Press de pecho con mancuerna",
                 "sets": "x12"
+              },
+              {
+                "name": "Aperturas en polea (cruce de poleas)",
+                "sets": "x15"
               },
               {
                 "name": "Jalón de espalda por encima de la cabeza",
                 "sets": "x15"
-              },
-              {
-                "name": "Polea, agarre 2 cuerdas al pecho",
-                "sets": "x10"
               }
             ]
           },
@@ -813,12 +809,12 @@
             "label": "Circuito 3 · x3",
             "exercises": [
               {
-                "name": "Flexiones inclinadas con las manos en el banco",
-                "sets": "x12"
+                "name": "Remo con mancuerna, un brazo",
+                "sets": "x12 por brazo"
               },
               {
-                "name": "Banco, brazos arriba con mancuerna hacia atrás",
-                "sets": "x15"
+                "name": "Jalón al pecho, agarre supino",
+                "sets": "x12"
               }
             ]
           }
@@ -835,11 +831,11 @@
             "label": "Circuito 1 · x3",
             "exercises": [
               {
-                "name": "Peso muerto",
-                "sets": "x12"
+                "name": "Peso muerto sumo con barra",
+                "sets": "x10"
               },
               {
-                "name": "Sentadilla sumo con mancuerna",
+                "name": "Empuje de cadera en Smith",
                 "sets": "x12"
               },
               {
@@ -852,16 +848,16 @@
             "label": "Circuito 2 · x3",
             "exercises": [
               {
-                "name": "Zancada con peso",
-                "sets": "x12"
-              },
-              {
                 "name": "Máquina del culito",
                 "sets": "x15"
               },
               {
-                "name": "Patada",
-                "sets": "12 por pierna"
+                "name": "Patada de glúteo en polea baja",
+                "sets": "x15"
+              },
+              {
+                "name": "Puente",
+                "sets": "x15"
               }
             ]
           },
@@ -869,12 +865,12 @@
             "label": "Circuito 3 · x3",
             "exercises": [
               {
-                "name": "Puente",
-                "sets": "x15"
+                "name": "Pantorrilla de pie (burro)",
+                "sets": "x20"
               },
               {
-                "name": "Elevación de talones en prensa",
-                "sets": "x15"
+                "name": "Acostada boca arriba, mancuerna en la pelvis, elevación con cada pie",
+                "sets": "x12"
               }
             ]
           }
@@ -896,16 +892,16 @@
             "label": "Circuito 1 · x3",
             "exercises": [
               {
-                "name": "Press de hombro con mancuerna",
-                "sets": "x10"
-              },
-              {
-                "name": "Curl martillo con mancuerna",
+                "name": "Press Arnold con mancuerna",
                 "sets": "x12"
               },
               {
-                "name": "Extensión de tríceps con mancuerna sobre la cabeza",
-                "sets": "x12"
+                "name": "Curl 21 con barra",
+                "sets": "7+7+7"
+              },
+              {
+                "name": "Cajón, sostenerse de espaldas, bajar y subir",
+                "sets": "x15"
               }
             ]
           },
@@ -917,11 +913,11 @@
                 "sets": "x15"
               },
               {
-                "name": "Curl de bíceps en polea baja",
-                "sets": "x12"
+                "name": "Extensión de tríceps en polea, cuerda",
+                "sets": "x15"
               },
               {
-                "name": "Cajón, sostenerse de espaldas, bajar y subir",
+                "name": "Curl martillo con mancuerna",
                 "sets": "x15"
               }
             ]
@@ -930,11 +926,11 @@
             "label": "Circuito 3 · x3",
             "exercises": [
               {
-                "name": "Sentada al revés, máquina de abrir y cerrar brazos",
-                "sets": "x12"
+                "name": "Jalón a la frente con polea, agarre de cuerdas",
+                "sets": "x15"
               },
               {
-                "name": "Jalón a la frente con polea, agarre de cuerdas",
+                "name": "Patada de tríceps con mancuerna",
                 "sets": "x15"
               }
             ]
@@ -952,12 +948,12 @@
             "label": "Circuito 1 · x3",
             "exercises": [
               {
-                "name": "Sentadilla con mancuerna",
-                "sets": "x15"
+                "name": "Sentadilla con barra (peso alto, pocas repeticiones)",
+                "sets": "x8"
               },
               {
-                "name": "Prensa (subiendo peso por serie)",
-                "sets": "x12"
+                "name": "Cajón, subir y bajar con mancuerna",
+                "sets": "x12 por pierna"
               },
               {
                 "name": "Extensión",
@@ -970,15 +966,15 @@
             "exercises": [
               {
                 "name": "Hack al revés",
+                "sets": "x20"
+              },
+              {
+                "name": "Sentadilla sumo con mancuerna",
                 "sets": "x15"
               },
               {
                 "name": "Zancada con peso",
-                "sets": "x12"
-              },
-              {
-                "name": "Sentadilla sumo con mancuerna",
-                "sets": "x12"
+                "sets": "x15"
               }
             ]
           },
@@ -986,11 +982,11 @@
             "label": "Circuito 3 · x3",
             "exercises": [
               {
-                "name": "Cajón, subir y bajar",
-                "sets": "x20"
+                "name": "Elevación de talones en prensa",
+                "sets": "x25"
               },
               {
-                "name": "Elevación de talones en prensa",
+                "name": "Aductor de cerrar",
                 "sets": "x20"
               }
             ]
@@ -1033,8 +1029,8 @@
                 "sets": "x15"
               },
               {
-                "name": "Trotar hasta el hospital",
-                "sets": ""
+                "name": "Elíptica",
+                "sets": "10 min"
               }
             ]
           },
@@ -1072,16 +1068,16 @@
             "label": "Circuito 1 · x3",
             "exercises": [
               {
-                "name": "Press inclinado con mancuerna",
+                "name": "Press de pecho en máquina",
+                "sets": "x15"
+              },
+              {
+                "name": "Remo con barra inclinado",
                 "sets": "x12"
               },
               {
-                "name": "Jalón al pecho",
-                "sets": "x10"
-              },
-              {
-                "name": "Remo con mancuerna, un brazo",
-                "sets": "x12 por brazo"
+                "name": "Press inclinado con mancuerna",
+                "sets": "x15"
               }
             ]
           },
@@ -1089,16 +1085,16 @@
             "label": "Circuito 2 · x3",
             "exercises": [
               {
-                "name": "Press de pecho con mancuerna",
-                "sets": "x12"
-              },
-              {
                 "name": "Jalón al pecho, agarre cerrado",
-                "sets": "x12"
+                "sets": "x15"
               },
               {
-                "name": "Remo en polea baja, codos pegados",
-                "sets": "x12"
+                "name": "Aperturas con mancuerna en banco",
+                "sets": "x15"
+              },
+              {
+                "name": "Jalón con brazos rectos en polea",
+                "sets": "x15"
               }
             ]
           },
@@ -1106,16 +1102,12 @@
             "label": "Circuito 3 · x3",
             "exercises": [
               {
-                "name": "Aperturas con mancuerna en banco",
-                "sets": "x12"
+                "name": "Flexiones inclinadas con las manos en el banco",
+                "sets": "x15"
               },
               {
-                "name": "Jalón con brazos rectos en polea",
-                "sets": "x12"
-              },
-              {
-                "name": "Remo",
-                "sets": "x10"
+                "name": "Banco, brazos arriba con mancuerna hacia atrás",
+                "sets": "x15"
               }
             ]
           }
@@ -1132,8 +1124,8 @@
             "label": "Circuito 1 · x3",
             "exercises": [
               {
-                "name": "Peso muerto rumano con mancuerna",
-                "sets": "x15"
+                "name": "Peso muerto rumano con barra",
+                "sets": "x12"
               },
               {
                 "name": "La que llega al culito",
@@ -1149,16 +1141,16 @@
             "label": "Circuito 2 · x3",
             "exercises": [
               {
-                "name": "Avanzadas con peso (incluye sentadilla)",
-                "sets": "x12"
-              },
-              {
-                "name": "Máquina del culito",
+                "name": "Puente con barra (hip thrust)",
                 "sets": "x15"
               },
               {
-                "name": "Elevación de talones en prensa",
-                "sets": "x15"
+                "name": "Puente a una pierna",
+                "sets": "15 por pierna"
+              },
+              {
+                "name": "Patada",
+                "sets": "15 por pierna"
               }
             ]
           },
@@ -1166,12 +1158,12 @@
             "label": "Circuito 3 · x3",
             "exercises": [
               {
-                "name": "Acostada boca arriba, mancuerna en la pelvis, elevación con cada pie",
-                "sets": "x12"
+                "name": "Pantorrilla de pie (burro)",
+                "sets": "x25"
               },
               {
-                "name": "Puente",
-                "sets": "x20"
+                "name": "Acostada boca arriba, mancuerna en la pelvis, levantarse con los dos pies",
+                "sets": "x15"
               }
             ]
           }

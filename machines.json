@@ -123,6 +123,59 @@
       "categoria": "espacio",
       "evidencia": "\"Vuelta del gimnasio al hospital\", \"Trote al hospital\" en tus notas originales — parece ser un trayecto real afuera del gimnasio, no una caminadora.",
       "usadoEnRutinaActual": true
+    },
+    {
+      "id": "smith",
+      "nombre": "Máquina Smith (multipower)",
+      "categoria": "guiado",
+      "evidencia": "Visible en las fotos del gimnasio que subiste el 14 oct 2026 (riel vertical guiado con banco ajustable adentro, diagrama de \"Chest press\" en la pared).",
+      "usadoEnRutinaActual": true,
+      "notaUso": "Se usa para sentadilla, press de banca, press inclinado, zancada y empuje de cadera guiados."
+    },
+    {
+      "id": "press-pecho-palanca",
+      "nombre": "Máquina de press de pecho con palanca (plate-loaded, un brazo)",
+      "categoria": "máquina de palanca",
+      "evidencia": "Visible en una de las fotos del gimnasio (asiento con respaldo, palanca horizontal a la altura del pecho, se carga con discos).",
+      "usadoEnRutinaActual": true
+    },
+    {
+      "id": "multiestacion-poleas",
+      "nombre": "Multiestación / cruce de poleas (dos torres con pilas de peso)",
+      "categoria": "cable",
+      "evidencia": "Visible en varias fotos del gimnasio (torres con pila de peso selectorizada a cada lado, marca \"CONTROL\" en el panel).",
+      "usadoEnRutinaActual": true,
+      "notaUso": "Refuerza el supuesto de la polea: aquí se confirma que hay poleas altas, medias y bajas de verdad, con dos torres (sirve para cruce de poleas/aperturas de pecho)."
+    },
+    {
+      "id": "rack-dominadas-fondos",
+      "nombre": "Rack con barra de dominadas y paralelas de fondos",
+      "categoria": "peso corporal",
+      "evidencia": "Visible en una foto (una persona haciendo fondos en paralelas dentro de una estructura metálica).",
+      "usadoEnRutinaActual": false,
+      "notaUso": "No lo agregué todavía a la rutina porque dominadas/fondos de cuerpo completo pueden ser muy exigentes al inicio; usamos el cajón para fondos asistidos. Avísame si Luisa ya puede hacer fondos en paralelas y lo sumo."
+    },
+    {
+      "id": "pantorrilla-pie",
+      "nombre": "Máquina de pantorrilla de pie (burro / donkey calf raise)",
+      "categoria": "máquina de palanca",
+      "evidencia": "Visible en una foto (estructura amarilla con plataforma para pararse y palanca con peso detrás, a la altura de la cadera).",
+      "usadoEnRutinaActual": true
+    },
+    {
+      "id": "eliptica",
+      "nombre": "Elíptica",
+      "categoria": "cardio",
+      "evidencia": "Visible en una foto (máquina marca \"Athletic\").",
+      "usadoEnRutinaActual": true
+    },
+    {
+      "id": "anillas",
+      "nombre": "Anillas de gimnasia (colgadas del techo)",
+      "categoria": "peso corporal",
+      "evidencia": "Visibles colgando del techo en dos fotos del gimnasio.",
+      "usadoEnRutinaActual": false,
+      "notaUso": "No las usé en la rutina: requieren más técnica y estabilidad de la que conviene para un programa de tonificación general."
     }
   ]
 }
