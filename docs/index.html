@@ -332,7 +332,7 @@
   <div id="daysContainer"></div>
 </main>
 
-<footer>Toca un ejercicio para ver cómo se hace. Marca la casilla al terminarlo; el progreso se guarda en este dispositivo.<br>Versión v9</footer>
+<footer>Toca un ejercicio para ver cómo se hace. Marca la casilla al terminarlo; el progreso se guarda en este dispositivo.<br>Versión v10</footer>
 <p class="credits">Ilustraciones de ejercicios: Everkinetic y <a href="https://bryllim.com" target="_blank" rel="noopener noreferrer">Bryl Lim</a> (<a href="https://github.com/bryllim/workout-guide" target="_blank" rel="noopener noreferrer">workout-guide</a>), bajo licencia <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>.</p>
 
 <script>
@@ -453,7 +453,12 @@
     "Patada de glúteo en polea baja": "De pie frente a la polea baja con el agarre en el tobillo, lleva la pierna hacia atrás extendida apretando el glúteo, y regresa controlando.",
     "Puente a una pierna": "Acostada boca arriba con una rodilla doblada y la otra pierna extendida, levanta la cadera apretando el glúteo de apoyo, y baja controlando.",
     "Pantorrilla de pie (burro)": "De pie en la plataforma con el cuerpo inclinado hacia adelante apoyado en el soporte, sube los talones todo lo que puedas y baja estirando la pantorrilla.",
-    "Elíptica": "Sube a la elíptica y pedalea a ritmo constante, ayudándote con los brazos en las barras móviles, manteniendo una respiración controlada."
+    "Elíptica": "Sube a la elíptica y pedalea a ritmo constante, ayudándote con los brazos en las barras móviles, manteniendo una respiración controlada.",
+    "Press militar con barra": "De pie con la barra apoyada en los hombros, empuja hacia arriba hasta extender los brazos sin arquear la espalda, y baja controlando.",
+    "Press francés con barra": "Acostada en el banco con la barra sobre el pecho, baja la barra hacia la frente doblando solo los codos, y extiende de nuevo sin mover los hombros.",
+    "Curl concentrado con mancuerna": "Sentada con el codo apoyado en la cara interna del muslo, flexiona el codo subiendo la mancuerna hacia el hombro, y baja controlando.",
+    "Zancada búlgara": "De espaldas al cajón, apoya el pie trasero sobre él y baja en zancada con la pierna delantera hasta casi rozar la rodilla trasera al piso, y sube.",
+    "Sentadilla isométrica en pared": "Apoya la espalda en la pared y baja hasta que las rodillas queden en 90 grados, como sentada en una silla invisible, y sostén la posición."
   };
 
   // ---- illustrations, self-hosted from assets/ (CC BY-SA 4.0, see footer credit) ----
@@ -552,7 +557,12 @@
     "Patada de glúteo en polea baja": "cable-kickback",
     "Puente a una pierna": "single-leg-glute-bridge",
     "Pantorrilla de pie (burro)": "donkey-calf-raise",
-    "Elíptica": "elliptical"
+    "Elíptica": "elliptical",
+    "Press militar con barra": "overhead-press",
+    "Press francés con barra": "skull-crusher",
+    "Curl concentrado con mancuerna": "concentration-curl",
+    "Zancada búlgara": "bulgarian-split-squat",
+    "Sentadilla isométrica en pared": "wall-sit"
   };
 
   function ex(name, sets){ return { name: name, sets: sets }; }
@@ -588,17 +598,17 @@
           circuits: [
             circuit("Circuito 1 · x3", [
               ex("Sentadilla con barra", "x10"),
-              ex("Prensa (subiendo peso por serie)", "x12"),
-              ex("Extensión", "x12")
+              ex("Prensa (subiendo peso por serie)", ""),
+              ex("Hack al revés", "x12")
             ]),
             circuit("Circuito 2 · x3", [
               ex("Zancada con peso", "x12"),
-              ex("Aductor de cerrar", "x15"),
-              ex("Avanzadas con peso (incluye sentadilla)", "x12")
+              ex("Cajón, subir y bajar", "x15"),
+              ex("Elevación de talones en prensa", "x15")
             ]),
             circuit("Circuito 3 · x3", [
-              ex("Hack al revés", "x12"),
-              ex("Elevación de talones en prensa", "x15")
+              ex("Extensión", "x12"),
+              ex("Aductor de cerrar", "x15")
             ])
           ]
         },
@@ -694,18 +704,18 @@
           warmup: "5 min de bicicleta o caminata, sentadillas sin peso y movilidad de cadera",
           circuits: [
             circuit("Circuito 1 · x3", [
-              ex("Hack al revés", "x12"),
+              ex("Sentadilla con mancuerna", "x15"),
               ex("Sentadilla sumo con mancuerna", "x15"),
-              ex("Cajón, subir y bajar", "x15")
+              ex("Zancada búlgara", "12 por pierna")
             ]),
             circuit("Circuito 2 · x3", [
-              ex("Extensión", "x15"),
-              ex("Sentadilla con mancuerna", "x15"),
-              ex("Elevación de talones en prensa", "x15")
+              ex("Cajón, subir y bajar con mancuerna", "12 por pierna"),
+              ex("Avanzadas con peso (incluye sentadilla)", "x12"),
+              ex("Sentadilla isométrica en pared", "30 seg")
             ]),
             circuit("Circuito 3 · x3", [
-              ex("Aductor de cerrar", "x15"),
-              ex("Prensa (subiendo peso por serie)", "x15")
+              ex("Extensión", "x15"),
+              ex("Aductor de cerrar", "x15")
             ])
           ]
         },
@@ -781,18 +791,18 @@
           warmup: "Movilidad de hombros y codos, y 5 min de caminata o bicicleta suave",
           circuits: [
             circuit("Circuito 1 · x3", [
-              ex("Press de hombro en Smith", "x10"),
-              ex("Elevación lateral en polea", "x15"),
-              ex("Curl de bíceps en polea baja", "x12")
+              ex("Press militar con barra", "x10"),
+              ex("Press francés con barra", "x12"),
+              ex("Curl concentrado con mancuerna", "x12")
             ]),
             circuit("Circuito 2 · x3", [
               ex("Extensión de tríceps en polea, cuerda", "x12"),
               ex("Jalón a la frente con polea, agarre de cuerdas", "x15"),
-              ex("Curl de bíceps con barra", "x12")
+              ex("Curl de bíceps en polea baja", "x12")
             ]),
             circuit("Circuito 3 · x3", [
               ex("Cajón, sostenerse de espaldas, bajar y subir", "x12"),
-              ex("Polea arriba, codos pegados, bajar y subir", "x15")
+              ex("Vuelos posteriores con mancuerna, inclinada", "x15")
             ])
           ]
         },
@@ -802,17 +812,17 @@
           circuits: [
             circuit("Circuito 1 · x3", [
               ex("Sentadilla en Smith", "x10"),
-              ex("Zancada reversa en Smith", "x12 por pierna"),
-              ex("Extensión", "x15")
+              ex("Zancada reversa en Smith", "12 por pierna"),
+              ex("Sentadilla sumo con mancuerna", "x15")
             ]),
             circuit("Circuito 2 · x3", [
-              ex("Prensa (subiendo peso por serie)", "x15"),
-              ex("Aductor de cerrar", "x20"),
-              ex("Elevación de talones en prensa", "x20")
+              ex("Cajón, subir y bajar", "x15"),
+              ex("Elevación de talones en prensa", "x20"),
+              ex("Sentadilla isométrica en pared", "40 seg")
             ]),
             circuit("Circuito 3 · x3", [
-              ex("Sentadilla con mancuerna", "x15"),
-              ex("Hack al revés", "x15")
+              ex("Extensión", "x15"),
+              ex("Aductor de cerrar", "x20")
             ])
           ]
         },
@@ -821,20 +831,20 @@
           warmup: "Trote suave y movilidad articular",
           circuits: [
             circuit("Circuito 1 · x3", [
-              ex("Burpies", "x12"),
+              ex("Plancha lateral", "30 seg por lado"),
               ex("Mariposas", "x40"),
-              ex("Coger balón y lanzar hacia arriba", "x12")
+              ex("Coger balón y lanzar hacia arriba", "")
             ]),
-            circuit("Circuito 2 · x4", [
-              ex("Plancha", "40 seg"),
-              ex("Gusanito boca abajo", "x10"),
-              ex("Bicicleta", "x15"),
-              ex("Plancha lateral", "30 seg por lado")
+            circuit("Circuito 2 · x3", [
+              ex("Superman", "x12"),
+              ex("Acostada, caminado", "1 min"),
+              ex("Elevaciones", "x15")
             ]),
             circuit("Circuito 3 · x3", [
               ex("Tijeras", "x15"),
-              ex("Elevaciones", "x15"),
-              ex("Abdominales", "x15")
+              ex("Gusanito boca abajo", "x10"),
+              ex("Plancha", "40 seg"),
+              ex("Bicicleta", "x15")
             ])
           ]
         },
@@ -865,16 +875,16 @@
             circuit("Circuito 1 · x3", [
               ex("Peso muerto sumo con barra", "x10"),
               ex("Empuje de cadera en Smith", "x12"),
-              ex("Aductor al revés", "x20")
+              ex("Máquina del culito", "x15")
             ]),
             circuit("Circuito 2 · x3", [
-              ex("Máquina del culito", "x15"),
+              ex("Patada", "12 por pierna"),
               ex("Patada de glúteo en polea baja", "x15"),
-              ex("Puente", "x15")
+              ex("Puente a una pierna", "12 por pierna")
             ]),
             circuit("Circuito 3 · x3", [
-              ex("Pantorrilla de pie (burro)", "x20"),
-              ex("Acostada boca arriba, mancuerna en la pelvis, elevación con cada pie", "x12")
+              ex("Aductor al revés", "x20"),
+              ex("Pantorrilla de pie (burro)", "x20")
             ])
           ]
         }
@@ -909,16 +919,16 @@
           circuits: [
             circuit("Circuito 1 · x3", [
               ex("Sentadilla con barra (peso alto, pocas repeticiones)", "x8"),
-              ex("Cajón, subir y bajar con mancuerna", "x12 por pierna"),
-              ex("Extensión", "x20")
+              ex("Hack al revés", "x20"),
+              ex("Prensa (subiendo peso por serie)", "")
             ]),
             circuit("Circuito 2 · x3", [
-              ex("Hack al revés", "x20"),
-              ex("Sentadilla sumo con mancuerna", "x15"),
-              ex("Zancada con peso", "x15")
+              ex("Sentadilla con mancuerna", "x15"),
+              ex("Avanzadas con peso (incluye sentadilla)", "x15"),
+              ex("Zancada reversa en Smith", "15 por pierna")
             ]),
             circuit("Circuito 3 · x3", [
-              ex("Elevación de talones en prensa", "x25"),
+              ex("Extensión", "x20"),
               ex("Aductor de cerrar", "x20")
             ])
           ]
@@ -927,20 +937,20 @@
           key: "s4-miercoles", day: "Miércoles", focus: "Abs y Cardio", type: "abs",
           warmup: "Trote suave y movilidad articular",
           circuits: [
-            circuit("Circuito 1 · x4", [
-              ex("Burpies", "x15"),
-              ex("Mariposas", "x40"),
-              ex("Tirar balón", "x15")
+            circuit("Circuito 1 · x3", [
+              ex("Plancha tocando hombro", "x15"),
+              ex("Vuelta al gimnasio (trote)", ""),
+              ex("Plancha haciendo skippi", "x15")
             ]),
             circuit("Circuito 2 · x3", [
-              ex("Plancha tocando hombro", "x15"),
-              ex("Plancha haciendo skippi", "x15"),
-              ex("Elíptica", "10 min")
-            ]),
-            circuit("Circuito 3 · x4", [
               ex("Acostada, tijera", "1 min"),
               ex("Acostada, elevaciones", "1 min"),
-              ex("Bicicleta", "x20"),
+              ex("Plancha lateral", "30 seg por lado")
+            ]),
+            circuit("Circuito 3 · x3", [
+              ex("Cajón, subir y bajar", "x20"),
+              ex("Tirar balón", "x15"),
+              ex("Elíptica", "10 min"),
               ex("Abdominales", "x20")
             ])
           ]
@@ -950,18 +960,18 @@
           warmup: "Movilidad de hombros, aperturas de brazos sin peso y 5 min de caminata suave",
           circuits: [
             circuit("Circuito 1 · x3", [
-              ex("Press de pecho en máquina", "x15"),
-              ex("Remo con barra inclinado", "x12"),
-              ex("Press inclinado con mancuerna", "x15")
+              ex("Press de pecho con mancuerna", "x15"),
+              ex("Flexiones inclinadas con las manos en el banco", "x15"),
+              ex("Remo con mancuerna, un brazo", "15 por brazo")
             ]),
             circuit("Circuito 2 · x3", [
+              ex("Banco, brazos arriba con mancuerna hacia atrás", "x15"),
               ex("Jalón al pecho, agarre cerrado", "x15"),
-              ex("Aperturas con mancuerna en banco", "x15"),
-              ex("Jalón con brazos rectos en polea", "x15")
+              ex("Press de pecho en máquina", "x15")
             ]),
             circuit("Circuito 3 · x3", [
-              ex("Flexiones inclinadas con las manos en el banco", "x15"),
-              ex("Banco, brazos arriba con mancuerna hacia atrás", "x15")
+              ex("Jalón con brazos rectos en polea", "x15"),
+              ex("Jalón al pecho, agarre supino", "x15")
             ])
           ]
         },
@@ -971,17 +981,17 @@
           circuits: [
             circuit("Circuito 1 · x3", [
               ex("Peso muerto rumano con barra", "x12"),
-              ex("La que llega al culito", "x15"),
-              ex("Aductor al revés", "x25")
+              ex("Acostada boca arriba, mancuerna en la pelvis, elevación con cada pie", "x15"),
+              ex("Acostada boca arriba, mancuerna en la pelvis, levantarse con los dos pies", "x15")
             ]),
             circuit("Circuito 2 · x3", [
               ex("Puente con barra (hip thrust)", "x15"),
-              ex("Puente a una pierna", "15 por pierna"),
-              ex("Patada", "15 por pierna")
+              ex("Empuje de cadera en Smith", "x15"),
+              ex("Puente", "x15")
             ]),
             circuit("Circuito 3 · x3", [
-              ex("Pantorrilla de pie (burro)", "x25"),
-              ex("Acostada boca arriba, mancuerna en la pelvis, levantarse con los dos pies", "x15")
+              ex("Aductor al revés", "x25"),
+              ex("Pantorrilla de pie (burro)", "x25")
             ])
           ]
         }
